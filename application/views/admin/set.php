@@ -8,6 +8,8 @@
             echo '<div class="alert alert-success">
             <strong>Success! </strong> Set questions send to the evaluators
         </div>';
+
+            unset($_SESSION['Send']);
         }
         
     ?>

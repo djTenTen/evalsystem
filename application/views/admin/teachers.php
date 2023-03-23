@@ -8,30 +8,42 @@
     <?php
         if($this->session->flashdata('Added') != null){
             echo '<div class="alert alert-success">
-            <strong>Success! </strong> Teacher has been successfully registered. 
+            <strong>Success! </strong> '.$_SESSION['teachername'].' has been successfully registered. 
         </div>';
+            
+            unset($_SESSION['teachername']);
+            unset($_SESSION['Added']);
         }
 
         if($this->session->flashdata('Updated') != null){
             echo '<div class="alert alert-success">
-            <strong>Success! </strong> Teacher info has been updated. 
+            <strong>Success! </strong> '.$_SESSION['teachername'].' info has been updated. 
         </div>';
+
+            unset($_SESSION['teachername']);
+            unset($_SESSION['Updated']);
         }
 
         if($this->session->flashdata('Deleted') != null){
             echo '<div class="alert alert-success">
-            <strong>Success! </strong> Drink has been Deleted. 
+            <strong>Success! </strong>'.$_SESSION['dteachername'].' Has been Removed. 
         </div>';
+        
+            unset($_SESSION['dteachername']);
+            unset($_SESSION['Deleted']);  
         }
 
         if($this->session->flashdata('Errorpass') != null){
             echo '<div class="alert alert-danger">
             <strong>Error! </strong> Wrong administrative password. 
         </div>';
+            
+            unset($_SESSION['Errorpass']);
         }
         
         
     ?>
+
 
 
 

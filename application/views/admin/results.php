@@ -60,6 +60,8 @@
                                             and Department = 'Seniorhigh'
                                             and assign_section.teacherID = $shstid");
 
+                                            
+
                                             foreach($query1->result_array() as $sec1){
 
                                                 
@@ -164,6 +166,11 @@
                                                 $Supsag1 = $Supsagree1->row_array();
 
 
+                                                $shscredential = $this->db->query("select sum(Points) as points 
+                                                from teacher_credentials 
+                                                where TeacherID = $shstid");
+                                                $points = $shscredential->row_array();
+                                                $credpointsshs = $points['points'];
 
 
                                                 if(empty($studcount1['studcount'])){
@@ -181,8 +188,8 @@
                                                 // result from supervisors
                                                 $resultSupervisorSHS = (($Supsda1['sda'] * 2) + ($Supda1['da'] * 3) + ($Supag1['ag'] * 4) + ($Supsag1['sag'] * 5));
                                                 
-                                                // 40% of supervisor, 40% of Students and 20% of Teachers
-                                                $result1 = ($resultSupervisorSHS * .40) + ($resultTeacherSHS * .20) + ($resultStudentSHS * .40);
+                                                
+                                               
                                         
                                         
                                         ?>
@@ -193,31 +200,46 @@
                                                 <td><?= $da1['da'];?></td>
                                                 <td><?= $ag1['ag'];?></td>
                                                 <td><?= $sag1['sag'];?></td>
-                                                <td><?= $result1;?></td>
+                                                <td><?= $resultStudentSHS;?></td>
                                             </tr>
                                         
                                                 <?php
                                                               
-                                                    $summ1 = $summ1 + $result1;
+                                                    $summ1 = $summ1 + $resultStudentSHS;
                                                     
                                                 ?>
                                     
                                         <?php  } 
-                                            
+                                                // 40% of supervisor, 40% of Students and 20% of Teachers
+                                                $performanceshs = ($resultSupervisorSHS * .40) + ($resultTeacherSHS * .20) + ($summ1 * .40);
                                                 
                                                 $data1 = array(
                                                     'Teacher' => $shstid,
-                                                    'Summ' => $summ1,
+                                                    'SummPerformance' => $performanceshs,
+                                                    'SummCredentials' => $credpointsshs,
                                                     'dpt' => 'shs'
                                                 );
                                                 $this->db->insert("summary", $data1);
-                                        
+                                                
                                         
                                         ?>  
                                             </tbody>
 
                                         </table>
 
+                                        
+                                       <strong><?= $rowshs['Fullname'];?> Assessment: <?= $resultTeacherSHS;?> </strong> <br>
+                                       <strong>Supervisor Assessment: <?= $resultSupervisorSHS;?> </strong> <br>
+                                       <h3>Credential Assessment: <?= $credpointsshs;?> </h3>
+                                       <h3>Performance rating: <?= $performanceshs;?></h3>
+                                       <h3>Overall: <?= $credpointsshs + $performanceshs ?></h3>
+                                    
+                                       <?php 
+                                       $resultSupervisorSHS = 0;
+                                       $resultTeacherSHS = 0;
+                                       $overallshs= 0;
+                                       $credpointsshs =0;
+                                        ?>        
                                     </div>
 
                                     <!-- Modal footer -->
@@ -398,6 +420,13 @@
 
 
 
+                                                $jhscredential = $this->db->query("select sum(Points) as points 
+                                                from teacher_credentials 
+                                                where TeacherID = $jhstid");
+                                                $pointsjhs = $jhscredential->row_array();
+                                                $credpointsjhs = $pointsjhs['points'];
+
+
 
                                                 if(empty($studcount2['studcount'])){
                                                     $divider2 = 1;
@@ -420,35 +449,50 @@
                                     
                                             <tr>
                                                 <td><?= $sec2['Section'];?></td>
-                                                <td><?= $sda2['sda'] + $Tsda2['sda'] + $Supsda2['sda'];?></td>
-                                                <td><?= $da2['da'] + $Tda2['da'] + $Supda2['da'];?></td>
-                                                <td><?= $ag2['ag'] + $Tag2['ag'] + $Supag2['ag'];?></td>
-                                                <td><?= $sag2['sag'] + $Tsag2['sag'] + $Supsag2['sag'];?></td>
-                                                <td><?= $result2;?></td>
+                                                <td><?= $sda2['sda'];?></td>
+                                                <td><?= $da2['da'];?></td>
+                                                <td><?= $ag2['ag'];?></td>
+                                                <td><?= $sag2['sag'];?></td>
+                                                <td><?= $resultStudentJHS;?></td>
                                             </tr>
                                         
                                                 <?php
                                                               
-                                                    $summ2 = $summ2 + $result2;
+                                                    $summ2 = $summ2 + $resultStudentJHS;
                                                     
                                                 ?>
                                     
                                         <?php  } 
-                                            
+                                                // 40% of supervisor, 40% of Students and 20% of Teachers
+                                                $performancejhs = ($resultSupervisorJHS * .40) + ($resultTeacherJHS * .20) + ($summ2 * .40);
                                                 
-                                                $data2 = array(
+                                                $data1 = array(
                                                     'Teacher' => $jhstid,
-                                                    'Summ' => $summ2,
+                                                    'SummPerformance' => $performancejhs,
+                                                    'SummCredentials' => $credpointsjhs,
                                                     'dpt' => 'jhs'
                                                 );
-                                                $this->db->insert("summary", $data2);
-                                        
+                                                $this->db->insert("summary", $data1);
+                                                
                                         
                                         ?>  
                                             </tbody>
 
                                         </table>
 
+                                        
+                                       <strong><?= $rowjhs['Fullname'];?> Assessment: <?= $resultTeacherJHS;?> </strong> <br>
+                                       <strong>Supervisor Assessment: <?= $resultSupervisorJHS;?> </strong> <br>
+                                       <h3>Credential Assessment: <?= $credpointsjhs;?> </h3>
+                                       <h3>Performance rating: <?= $performancejhs;?></h3>
+                                       <h3>Overall: <?= $credpointsjhs + $performancejhs ?></h3>
+
+                                        <?php 
+                                       $resultSupervisorJHS = 0;
+                                       $resultTeacherJHS = 0;
+                                       $overalljhs = 0;
+                                       $credpointsjhs = 0;
+                                        ?>
                                     </div>
 
                                     <!-- Modal footer -->
@@ -589,6 +633,14 @@
 
 
 
+
+                                                $gscredential = $this->db->query("select sum(Points) as points 
+                                                from teacher_credentials 
+                                                where TeacherID = $gstid");
+                                                $pointsgs = $gscredential->row_array();
+
+                                                $credpointsgs = $pointsgs['points'];
+
                                                 // $rescountsup = $this->db->query("select Count(resultID) as rescount
                                                 // from evaluations
                                                 // where Section = 'none'
@@ -601,24 +653,25 @@
 
                                                 $resultsupervisor = (($Supsda3['sda'] * 10) + ($Supda3['da'] * 20) + ($Supag3['ag'] * 30) + ($Supsag3['sag'] * 40));
 
-                                                $result3 = ($resultteacher * .20) + ($resultsupervisor * .80);
+                                                $performancegs = ($resultteacher * .20) + ($resultsupervisor * .80);
                                                
 
-                                                $data3 = array(
+                                                 $data3 = array(
                                                     'Teacher' => $gstid,
-                                                    'Summ' => $result3,
+                                                    'SummPerformance' => $performancegs,
+                                                    'SummCredentials' => $credpointsgs,
                                                     'dpt' => 'gs'
                                                 );
                                                 $this->db->insert("summary", $data3);
                                                 
-
+                                                
                                             ?>
                                                 <tr>
                                                     <td><?= $sda3['sda'] + $Supsda3['sda'];?></td>
                                                     <td><?= $da3['da'] + $Supda3['da'];?></td>
                                                     <td><?= $ag3['ag'] + $Supag3['ag'];?></td>
                                                     <td><?= $sag3['sag'] + $Supsag3['sag'];?></td>
-                                                    <td><?= $result3;?></td>
+                                                    <td><?= $performancegs;?></td>
                                                 </tr>
                                             </tbody>
                                         </table>

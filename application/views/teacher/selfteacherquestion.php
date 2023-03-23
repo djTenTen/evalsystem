@@ -57,7 +57,6 @@
             <?php foreach($qevalshs as $shs){?>
                 <div class="form-check">
                     <tr>
-                        
                         <td><?= $shs['Question'];?> <input type="text"  id="rid" name="rid[]" value="<?= $shs['resultID'];?>" hidden></td>
                         <td>
                             <input type="radio" class="form-check-input" id="ressd<?= $shs['resultID'];?>" name="ressd<?= $shs['resultID'];?>" value="1">
@@ -75,7 +74,6 @@
                             <input type="radio" class="form-check-input" id="ressa<?= $shs['resultID'];?>" name="ressa<?= $shs['resultID'];?>" value="1">
                             <input type="radio" class="form-check-input" id="ressa<?= $shs['resultID'];?>" name="ressa<?= $shs['resultID'];?>" value="0" hidden/>
                         </td>
-                        
                     </tr>
                 </div>
             <?php }?>

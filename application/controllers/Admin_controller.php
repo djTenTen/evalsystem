@@ -13,10 +13,13 @@ class Admin_controller extends CI_Controller{
             }else{
                 $data['title'] = "Dashboard";
 
-                $data['teachershs'] = $this->Admin_model->getRankingSHS();
-                $data['teacherjhs'] = $this->Admin_model->getRankingJHS();
-                $data['teachergs'] = $this->Admin_model->getRankingGS();
+                $data['teachershsPerformance'] = $this->Admin_model->getRankingSHSPerformance();
+                $data['teacherjhsPerformance'] = $this->Admin_model->getRankingJHSPerformance();
+                $data['teachergsPerformance'] = $this->Admin_model->getRankingGSPerformance();
                 
+                $data['teachershsCredentials'] = $this->Admin_model->getRankingSHSCredentials();
+                $data['teacherjhsCredentials'] = $this->Admin_model->getRankingJHSCredentials();
+                $data['teachergsCredentials'] = $this->Admin_model->getRankingGSCredentials();
 
                 $this->load->view('templates/header', $data);
                 $this->load->view('admin/'.$page, $data);
@@ -55,6 +58,7 @@ class Admin_controller extends CI_Controller{
 
     public function saveTeacher(){
 
+        $this->session->set_flashdata('teachername', strtoupper($this->input->post('lname')).', '.strtoupper($this->input->post('fname')).' '.strtoupper($this->input->post('mname')));
         $this->Admin_model->saveTeacher();
         $this->session->set_flashdata('Added','Added');
         redirect('teacher');
@@ -64,6 +68,7 @@ class Admin_controller extends CI_Controller{
 
     public function updateTeacher($teacherID){
 
+        $this->session->set_flashdata('teachername', strtoupper($this->input->post('name')));
         $this->Admin_model->updateTeacher($teacherID);
         $this->session->set_flashdata('Updated','Updated');
         redirect('teacher');
@@ -73,6 +78,9 @@ class Admin_controller extends CI_Controller{
 
     public function deleteTeacher($teacherID){
 
+        $query=$this->db->query("select Fullname from teachers where TeacherID = $teacherID");
+        $t = $query->row_array();
+        $this->session->set_flashdata('dteachername',$t['Fullname']);
         $this->Admin_model->deleteTeacher($teacherID);
         $this->session->set_flashdata('Deleted','Deleted');
         redirect('teacher');
@@ -180,7 +188,7 @@ class Admin_controller extends CI_Controller{
     public function addTempSection($sectionID){
 
         $dup = $this->Admin_model->addTempSection($sectionID);
-        if(count($dup) > 0){
+        if($dup['cuser'] > 0){
             $this->session->set_flashdata('Duplicate','Duplicate');
             redirect('sectionassignment');
         }else{
@@ -216,6 +224,7 @@ class Admin_controller extends CI_Controller{
                 show_404();
             }else{
                 $data['title'] = "Edit tSection Assignment Management";
+                $data['TeacherID'] = $teacherID;
                 
 
                 $data['sections'] = $this->Admin_model->getSections();
@@ -227,6 +236,14 @@ class Admin_controller extends CI_Controller{
             
         }
 
+    }
+
+    public function removeTeacherSection($teacherID, $sectionID){
+
+        $this->Admin_model->removeTeacherSection($teacherID, $sectionID);
+        $this->session->set_flashdata('Remove','Remove');
+        redirect('editsectionassignment/'.$teacherID);
+        
     }
 
 
@@ -273,7 +290,7 @@ class Admin_controller extends CI_Controller{
     public function addTempQuestion($questionID){
 
         $dup = $this->Admin_model->addTempQuestion($questionID);
-        if(count($dup) > 0){
+        if($dup> 0){
             $this->session->set_flashdata('Duplicate','Duplicate');
             redirect('setquestions');
         }else{
@@ -384,6 +401,68 @@ class Admin_controller extends CI_Controller{
         
     }
 
+
+
+
+
+
+    public function teacherCredentials(){
+
+        if(empty($_SESSION['Authentication'])){
+            redirect(base_url());
+        }elseif($_SESSION['Authentication'] === 1){
+
+            $page = 'teachercredentials';
+            if(!file_exists(APPPATH.'views/admin/'.$page.'.php')){
+                show_404();
+            }else{
+                $data['title'] = "Evaluation Results";
+
+                $data['teacher'] = $this->Admin_model->getTeachers();
+                $this->load->view('templates/header', $data);
+                $this->load->view('admin/'.$page, $data);
+                $this->load->view('templates/footer');
+
+            }
+            
+        }
+
+    }
+
+    public function viewTeacherCredentials($teacherID){
+
+        if(empty($_SESSION['Authentication'])){
+            redirect(base_url());
+        }elseif($_SESSION['Authentication'] === 1){
+
+            $page = 'viewteachercredentials';
+            if(!file_exists(APPPATH.'views/admin/'.$page.'.php')){
+                show_404();
+            }else{
+
+                $data['title'] = "Credentials";
+
+                $data['teachername'] = $this->Student_model->getTeacherName($teacherID);
+                $data['credentials'] = $this->Admin_model->getCredentials($teacherID);
+                $this->load->view('templates/header', $data);
+                $this->load->view('admin/'.$page, $data);
+                $this->load->view('templates/footer');
+
+            }
+            
+        }
+
+    }
+
+
+    public function saveCredentialScore($credentialID,$teacherID){
+
+        $this->Admin_model->saveCredentialScore($credentialID);
+        $this->session->set_flashdata('Score','Score');
+        redirect('viewcredentials/'.$teacherID);
+
+    }
+    
 
 
 

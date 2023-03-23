@@ -14,7 +14,7 @@ function viewpassword() {
 
 
 $(document).ready(function () {
-$('select').selectize({
-  sortField: 'text'
-});
-});
+  $('select').selectize({
+    sortField: 'text'
+  });
+  });

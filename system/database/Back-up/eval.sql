@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2023 at 03:48 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Feb 23, 2023 at 03:27 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,6 +33,29 @@ CREATE TABLE `assign_section` (
   `SectionID` varchar(20) DEFAULT NULL,
   `SY` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `assign_section`
+--
+
+INSERT INTO `assign_section` (`AssignID`, `teacherID`, `SectionID`, `SY`) VALUES
+(1, '1', '24', '2022-2023'),
+(5, '2', '75', '2022-2023'),
+(6, '2', '76', '2022-2023'),
+(7, '2', '77', '2022-2023'),
+(8, '2', '78', '2022-2023'),
+(9, '9', '97', '2022-2023'),
+(10, '9', '76', '2022-2023'),
+(11, '9', '75', '2022-2023'),
+(12, '9', '77', '2022-2023'),
+(13, '10', '75', '2022-2023'),
+(14, '10', '77', '2022-2023'),
+(15, '10', '78', '2022-2023'),
+(16, '3', '80', '2022-2023'),
+(17, '3', '81', '2022-2023'),
+(18, '10', '81', '2022-2023'),
+(19, '10', '80', '2022-2023'),
+(20, '9', '80', '2022-2023');
 
 -- --------------------------------------------------------
 
@@ -96,6 +119,67 @@ CREATE TABLE `evaluations` (
   `sagree` varchar(20) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `evaluations`
+--
+
+INSERT INTO `evaluations` (`resultID`, `QuestionID`, `Teacher`, `Section`, `Department`, `Set`, `sdisagree`, `disagree`, `agree`, `sagree`) VALUES
+(1, '6', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '0'),
+(2, '7', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '0'),
+(3, '8', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '0'),
+(4, '9', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '0'),
+(5, '10', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '0'),
+(6, '1', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '0', '1'),
+(7, '2', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '0', '1'),
+(8, '3', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '0', '1'),
+(9, '4', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '0', '1'),
+(10, '5', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '0', '1'),
+(11, '11', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(12, '12', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(13, '13', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(14, '14', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(15, '15', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(16, '11', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(17, '12', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(18, '13', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(19, '14', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(20, '15', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(21, '11', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '0'),
+(22, '12', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '0'),
+(23, '13', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '0'),
+(24, '14', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '0'),
+(25, '15', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '0'),
+(26, '11', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(27, '12', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(28, '13', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(29, '14', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(30, '15', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(31, '11', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(32, '12', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(33, '13', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(34, '14', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(35, '15', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(36, '11', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(37, '12', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(38, '13', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(39, '14', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(40, '15', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(41, '11', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(42, '12', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(43, '13', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(44, '14', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(45, '15', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(46, '11', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(47, '12', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(48, '13', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(49, '14', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(50, '15', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(51, '11', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(52, '12', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(53, '13', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(54, '14', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
+(55, '15', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0');
+
 -- --------------------------------------------------------
 
 --
@@ -110,6 +194,15 @@ CREATE TABLE `evaluation_transaction` (
   `pos` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `evaluation_transaction`
+--
+
+INSERT INTO `evaluation_transaction` (`evalID`, `evaluator`, `section`, `teacher`, `pos`) VALUES
+(1, '1', NULL, '1', 'Teacher'),
+(2, '2', NULL, '2', 'Teacher'),
+(3, '9', NULL, '9', 'Teacher');
+
 -- --------------------------------------------------------
 
 --
@@ -121,6 +214,25 @@ CREATE TABLE `questions` (
   `QuestionName` varchar(100) DEFAULT NULL,
   `Question` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `questions`
+--
+
+INSERT INTO `questions` (`QuestionID`, `QuestionName`, `Question`) VALUES
+(3, 'SHS Teacher', 'why'),
+(4, 'SHS Teacher', 'where'),
+(5, 'SHS Teacher', 'time'),
+(6, 'SHS Student', 'Bakit'),
+(7, 'SHS Student', 'Saan'),
+(8, 'SHS Student', 'Paano'),
+(9, 'SHS Student', 'Oras'),
+(10, 'SHS Student', 'Kailan'),
+(11, 'JHS Teacher', 'question 1'),
+(12, 'JHS Teacher', 'question 2'),
+(13, 'JHS Teacher', 'question 3'),
+(14, 'JHS Teacher', 'question 4'),
+(15, 'JHS Teacher', 'question 5');
 
 -- --------------------------------------------------------
 
@@ -265,6 +377,32 @@ CREATE TABLE `setquestions` (
   `sy` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `setquestions`
+--
+
+INSERT INTO `setquestions` (`setquesiontID`, `Setname`, `Question`, `dpt`, `sy`) VALUES
+(1, 'SHS TEACHER', '1', 'SHSTeacher', '2022-2023'),
+(2, 'SHS TEACHER', '2', 'SHSTeacher', '2022-2023'),
+(3, 'SHS TEACHER', '3', 'SHSTeacher', '2022-2023'),
+(4, 'SHS TEACHER', '4', 'SHSTeacher', '2022-2023'),
+(5, 'SHS TEACHER', '5', 'SHSTeacher', '2022-2023'),
+(6, 'SHS STUDENT', '6', 'Seniorhigh', '2022-2023'),
+(7, 'SHS STUDENT', '7', 'Seniorhigh', '2022-2023'),
+(8, 'SHS STUDENT', '8', 'Seniorhigh', '2022-2023'),
+(9, 'SHS STUDENT', '9', 'Seniorhigh', '2022-2023'),
+(10, 'SHS STUDENT', '10', 'Seniorhigh', '2022-2023'),
+(11, 'JHS TEACHER', '11', 'JHSTeacher', '2022-2023'),
+(12, 'JHS TEACHER', '12', 'JHSTeacher', '2022-2023'),
+(13, 'JHS TEACHER', '13', 'JHSTeacher', '2022-2023'),
+(14, 'JHS TEACHER', '14', 'JHSTeacher', '2022-2023'),
+(15, 'JHS TEACHER', '15', 'JHSTeacher', '2022-2023'),
+(16, 'JHS TEACHER', '11', 'JHSTeacher', '2022-2023'),
+(17, 'JHS TEACHER', '12', 'JHSTeacher', '2022-2023'),
+(18, 'JHS TEACHER', '13', 'JHSTeacher', '2022-2023'),
+(19, 'JHS TEACHER', '14', 'JHSTeacher', '2022-2023'),
+(20, 'JHS TEACHER', '15', 'JHSTeacher', '2022-2023');
+
 -- --------------------------------------------------------
 
 --
@@ -318,6 +456,19 @@ CREATE TABLE `summary` (
   `dpt` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `summary`
+--
+
+INSERT INTO `summary` (`SummaryID`, `Teacher`, `Summ`, `dpt`) VALUES
+(77, '1', '5', 'shs'),
+(78, '2', '0', 'jhs'),
+(79, '9', '0', 'jhs'),
+(80, '10', '0', 'jhs'),
+(81, '3', '0', 'gs'),
+(82, '9', '0', 'gs'),
+(83, '10', '0', 'gs');
+
 -- --------------------------------------------------------
 
 --
@@ -336,6 +487,20 @@ CREATE TABLE `teachers` (
   `Juniorhigh` varchar(20) DEFAULT 'No',
   `Gradeschool` varchar(20) DEFAULT 'No'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `teachers`
+--
+
+INSERT INTO `teachers` (`TeacherID`, `Fullname`, `email`, `pass`, `Position`, `dpt`, `College`, `Seniorhigh`, `Juniorhigh`, `Gradeschool`) VALUES
+(1, 'AGUAS, ALLEN JAYCEE TUD', 'jayceeaguas@gmail.com', 'AGUAS', 'Teacher', 'Teacher', 'No', 'Yes', 'No', 'No'),
+(2, 'SALAC, NIKKO GUINTO', 'nikkosalac@gmail.com', 'SALAC', 'Teacher', 'Teacher', 'No', 'No', 'Yes', 'No'),
+(3, 'SIGUA, CRISTIN JOY  TOLENTINO', 'cristinjoy@gmail.com', 'SIGUA', 'Teacher', 'Teacher', 'No', 'No', 'No', 'Yes'),
+(4, 'PEREZ, ANGELICA P', 'angelperez@gmail.com', 'PEREZ', 'Principal', 'Supervisor', 'No', 'Yes', 'No', 'No'),
+(5, 'SANTOS, MARVIN G', 'marvinsanton@gmail.com', 'SANTOS', 'VPAA', 'Supervisor', 'No', 'Yes', 'Yes', 'Yes'),
+(6, 'DOE, JOHN ', 'johndoe@gmail.com', 'DOE', 'Principal', 'Supervisor', 'No', 'No', 'Yes', 'No'),
+(9, 'GOLD, KEVIN ', 'kevingold@gmail.com', 'GOLD', 'Teacher', 'Teacher', 'No', 'No', 'Yes', 'Yes'),
+(10, 'BOCO, DAVIES JOHN ', 'davies@gmail.com', 'BOCO', 'Teacher', 'Teacher', 'No', 'No', 'Yes', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -477,31 +642,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `assign_section`
 --
 ALTER TABLE `assign_section`
-  MODIFY `AssignID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `AssignID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `evaluations`
 --
 ALTER TABLE `evaluations`
-  MODIFY `resultID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `resultID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `evaluation_transaction`
 --
 ALTER TABLE `evaluation_transaction`
-  MODIFY `evalID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `evalID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `QuestionID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `QuestionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `setquestions`
 --
 ALTER TABLE `setquestions`
-  MODIFY `setquesiontID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `setquesiontID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `students`
@@ -513,25 +678,25 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `summary`
 --
 ALTER TABLE `summary`
-  MODIFY `SummaryID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `SummaryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `TeacherID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TeacherID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `temp_question`
 --
 ALTER TABLE `temp_question`
-  MODIFY `tempquestionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `tempquestionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `temp_section`
 --
 ALTER TABLE `temp_section`
-  MODIFY `SectionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `SectionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `users`

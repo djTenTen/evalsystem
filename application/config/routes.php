@@ -28,6 +28,9 @@ $route['removetempsection/(:any)'] = 'Admin_controller/removeTempSection/$1';
 $route['assignsections'] = 'Admin_controller/assignSections';
 $route['editsectionassignment/(:any)'] = 'Admin_controller/editSectionAssignment/$1';
 
+$route['removeteachersection/(:any)/(:any)'] = 'Admin_controller/removeTeacherSection/$1/$2';
+
+
 
 $route['setquestions'] = 'Admin_controller/setQuestions';
 $route['addtempquestion/(:any)'] = 'Admin_controller/addTempQuestion/$1';
@@ -37,8 +40,9 @@ $route['registersetquestion'] = 'Admin_controller/registerSetQuestion';
 $route['sets'] = 'Admin_controller/sets';
 $route['sendquestions'] = 'Admin_controller/sendQuestions';
 $route['results'] = 'Admin_controller/Results';
-
-
+$route['teachercredentials'] = 'Admin_controller/teacherCredentials';
+$route['viewcredentials/(:any)'] = 'Admin_controller/viewTeacherCredentials/$1';
+$route['savecredentialscore/(:any)/(:any)'] = 'Admin_controller/saveCredentialScore/$1/$2';
 
 
 
@@ -56,7 +60,8 @@ $route['teacherquestions/(:any)/(:any)'] = 'Teacher_controller/teacherQuestions/
 $route['logsupanswer/(:any)/(:any)'] = 'Teacher_controller/logSupAnswer/$1/$2';
 $route['selfteacherquestion/(:any)'] = 'Teacher_controller/selfTeacherQuestion/$1';
 $route['logmyanswer/(:any)'] = 'Teacher_controller/logMyAnswer/$1';
-
+$route['mycredentials'] = 'Teacher_controller/myCredentials';
+$route['uploadcredential'] = 'Teacher_controller/uploadCredential';
 
 //DASHBOARD
 $route['404_override'] = '';

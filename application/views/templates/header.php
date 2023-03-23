@@ -21,12 +21,15 @@
     <!-- Latest compiled JavaScript -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
 
+    
     <script src="https://kit.fontawesome.com/2be74ad659.js" crossorigin="anonymous"></script>
 
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
-
+    
+    <script src="https://silviomoreto.github.io/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <link href="https://silviomoreto.github.io/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <!-- for data table -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -46,50 +49,44 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="<?= base_url();?>dashboard">Logo</a>
+        <a class="navbar-brand" href="<?= base_url();?>dashboard"> <img src="<?= base_url();?>img/logo3.png" alt="" srcset="" style="height: 30px;"> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
             <ul class="navbar-nav">
 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url();?>teacher">Teachers</a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url();?>questions">Questionaires</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Teacher</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="<?= base_url();?>teacher">Teacher Management</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url();?>sectionassignment">Section Assignment</a></li>
+                    </ul>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url();?>sectionassignment">Section Assignment</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Question</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="<?= base_url();?>questions">Questionaires</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url();?>setquestions">Set Questions</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url();?>sets">Sets</a></li>
+                    </ul>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Evaluation</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?= base_url();?>setquestions">Set Questions</a></li>
-                        <li><a class="dropdown-item" href="<?= base_url();?>sets">Sets</a></li>
                         <li><a class="dropdown-item" href="<?= base_url();?>results">Results</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url();?>teachercredentials">Teacher Credentials</a></li>
                     </ul>
                 </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Users</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?= base_url();?>setquestions">Admin</a></li>
-                        <li><a class="dropdown-item" href="#">Student</a></li>
-                        <li><a class="dropdown-item" href="#">Teachers</a></li>
-                    </ul>
-                </li>
-
+          
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><?= $_SESSION['FullName']?></a>
                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="<?= base_url();?>users">Users</a></li>
                         <li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#logout" >Logout</a></li>
-                        
-                        
                     </ul>
                 </li>
                 

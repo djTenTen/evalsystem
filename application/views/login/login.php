@@ -34,13 +34,22 @@
 
 
 </head>
-<body style="background-image: url(<?= base_url();?>img/hccnewlypainted.jpg); height: auto; width: auto; background-attachment: fixed; background-position: center; background-size: cover; overflow-x: hidden; ">
+<body style="background-image: url(<?= base_url();?>img/bghcc.jpg); height: auto; width: auto; background-attachment: fixed; background-position: center; background-size: cover; overflow-x: hidden; ">
 
-	<div class="container">
+	<div class="container" >
 		<!-- Outer Row -->
+        <?php
+        if($this->session->flashdata('Login_Failed') != null){
+            echo '<div class="alert alert-danger">
+            <strong>Login Failed!</strong> Invalid Username and Password!
+        </div>';
+
+            unset($_SESSION['Login_Failed']);
+        }
+    ?>
 		<div class="row justify-content-center  mt-5">
-                <div class="col-5 bg-white">
-                    <div class="p-5">
+                <div class="col-5" style="background-color: rgba(255, 255, 255, 0.7);">
+                    <div class="p-5 ">
                         <div class="text-center">
                             <h1 class="mb-4 text-black">Evaluation System</h1>
                         </div>
@@ -58,15 +67,12 @@
                             <button type="submit" class="btn btn-primary btn-user btn-block" >Login</button>
                         </form>
                         <hr>
-                        <div class="text-center">
-                            <a class="small" href="selectdpt">Create an Account!</a>
-                        </div>
                     </div>
                 </div>
 
                 <div class="col-5" style="background-color: rgba(255,255,255,0.0);">
                     <img src="<?= base_url();?>img/logo4.png" alt="Logo" class="" style="height:450px;">
-                    <h1>Logo</h1>
+                   
                 </div>	
             </div>
         </div>
@@ -92,6 +98,8 @@
                             echo '<div class="alert alert-danger">
                             <strong>Error! </strong> Login failed. 
                         </div>';
+
+                            unset($_SESSION['Errorpass']);
                         }
                     ?>
                     </div>

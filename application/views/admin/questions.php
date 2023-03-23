@@ -8,24 +8,32 @@
             echo '<div class="alert alert-success">
             <strong>Success! </strong> Question has been successfully added. 
         </div>';
+
+            unset($_SESSION['Added']);
         }
 
         if($this->session->flashdata('Updated') != null){
             echo '<div class="alert alert-success">
             <strong>Success! </strong> Question has been updated. 
         </div>';
+
+            unset($_SESSION['Updated']);
         }
 
         if($this->session->flashdata('Deleted') != null){
             echo '<div class="alert alert-success">
             <strong>Success! </strong> Question has been Deleted. 
         </div>';
+
+            unset($_SESSION['Deleted']);
         }
 
         if($this->session->flashdata('Errorpass') != null){
             echo '<div class="alert alert-danger">
             <strong>Error! </strong> Wrong administrative password. 
         </div>';
+
+            unset($_SESSION['Errorpass']);
         }
         
         

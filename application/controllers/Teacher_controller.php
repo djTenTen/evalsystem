@@ -123,6 +123,46 @@ class Teacher_controller extends CI_Controller{
 
 
 
+    public function myCredentials(){
+
+        if(empty($_SESSION['Authentication'])){
+            redirect(base_url());
+        }elseif($_SESSION['Authentication'] === 1){
+
+            $page = 'mycredentials';
+            if(!file_exists(APPPATH.'views/teacher/'.$page.'.php')){
+                show_404();
+            }else{
+
+                $myID = $_SESSION['UserID'];
+
+                $data['title'] = "Teacher Questions";
+                $data['pos'] = 'Teacher';
+
+                $data['teacherID'] = $myID;
+  
+                $data['teachername'] = $this->Student_model->getTeacherName($myID);
+                $data['credentials'] = $this->Teacher_model->getMyCredentials($myID);
+                
+                $this->load->view('teacher/'.$page, $data);
+            }
+            
+        }
+
+    }
+
+
+
+    public function uploadCredential(){
+
+        $this->Teacher_model->uploadCredential();
+        $this->session->set_flashdata('Success','Success');
+        redirect('mycredentials');
+
+    }
+
+
+
     
 
 

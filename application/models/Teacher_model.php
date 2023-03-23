@@ -274,4 +274,53 @@ class Teacher_model extends CI_Model{
 
 
 
+
+
+
+
+
+
+
+    public function getMyCredentials($myID){
+
+        $query = $this->db->query("select * from teacher_credentials where TeacherID = $myID");
+        return $query->result_array();
+
+    }
+
+
+
+
+    public function uploadCredential(){
+
+        $teacherID = $_SESSION['UserID'];
+
+        $data = array(
+            'CredentialName' => $this->input->post("credential"),
+            'TeacherID' => $teacherID
+        );
+
+        $this->db->insert('teacher_credentials', $data);
+
+        $select = $this->db->query("select CredentialID from teacher_credentials order by CredentialID desc limit 1");
+        foreach($select->result_array() as $row){
+            $credentialID = $row['CredentialID'];
+        }
+
+        $config['allowed_types'] = 'pdf'; 
+        $config['upload_path'] = './credential/';  
+        $config['file_name'] = $credentialID;
+        $this->load->library('upload',$config);
+
+        if ($this->upload->do_upload('suppdoc')) {
+            $this->upload->data();
+        }else{
+            return $this->upload->display_errors();
+        }
+
+
+    }
+
+
+
 }

@@ -14,7 +14,7 @@ class Login_model extends CI_Model{
         // $this->db->where("Username = '$u' and Password = '$p'");
         $login = "select * from users where BINARY un = ? and BINARY pss = ?";
         $result = $this->db->query($login, array($u,$p));
-        return $result->row_array();
+        return $result;
     }
 
     public function authenticateStudent($u,$p){
@@ -22,7 +22,7 @@ class Login_model extends CI_Model{
         // $this->db->where("Username = '$u' and Password = '$p'");
         $login = "select * from students where BINARY email = ? and BINARY pass = ?";
         $result = $this->db->query($login, array($u,$p));
-        return $result->row_array();
+        return $result;
     }
 
 
@@ -31,7 +31,7 @@ class Login_model extends CI_Model{
         // $this->db->where("Username = '$u' and Password = '$p'");
         $login = "select * from teachers where BINARY email = ? and BINARY pass = ?";
         $result = $this->db->query($login, array($u,$p));
-        return $result->row_array();
+        return $result;
     }
 
 

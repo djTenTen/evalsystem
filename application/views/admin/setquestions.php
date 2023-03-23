@@ -1,6 +1,6 @@
 <div class="container">
 
-    <h1>Section Assignment</h1>
+    <h1>Set Question</h1>
 
     <?php
 
@@ -8,12 +8,16 @@
             echo '<div class="alert alert-danger">
             <strong>Error! </strong> Question already included. 
         </div>';
+            
+            unset($_SESSION['Duplicate']);
         }
         
         if($this->session->flashdata('Added') != null){
             echo '<div class="alert alert-success">
             <strong>Success! </strong> Set questions added
         </div>';
+
+            unset($_SESSION['Added']);
         }
         
     ?>

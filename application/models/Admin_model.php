@@ -132,12 +132,12 @@ class Admin_model extends CI_Model{
 
         $userID = $_SESSION['UserID'];
         
-        $query = $this->db->query("select * 
+        $query = $this->db->query("select count(UserID) as cuser 
         from temp_section
         where Section = '$sectionID'
         and UserID = '$userID'");
         $count = $query->row_array();
-        if(count($count) > 0){
+        if($count['cuser'] > 0){
             return $count;
         }else{
             $data = array(
@@ -188,6 +188,10 @@ class Admin_model extends CI_Model{
         $this->db->delete("temp_section");
 
     }
+    public function removeTeacherSection($teacherID, $sectionID){
+
+        $this->db->query("delete from assign_section where teacherID = $teacherID and SectionID = $sectionID");
+    }
 
 
     public function getAssignedSection($teacherID){
@@ -222,8 +226,8 @@ class Admin_model extends CI_Model{
         $userID = $_SESSION['UserID'];
 
         $query = $this->db->query("select * from temp_question where Question = $questionID and userID = $userID");
-        $count = $query->row_array();
-        if(count($count) > 0){
+        $count = $query->num_rows();
+        if($count > 0){
             return $count;
         }else{
             $data = array(
@@ -556,14 +560,14 @@ class Admin_model extends CI_Model{
 
 
 
-    //dashboard data
-    public function getRankingSHS(){
-        $query = $this->db->query("select Fullname,Summ
+    //dashboard data PERFORMANCE
+    public function getRankingSHSPerformance(){
+        $query = $this->db->query("select Fullname,SummPerformance
         from teachers,summary
         where Teacher = TeacherID
         and Seniorhigh = 'Yes'
         and summary.dpt = 'shs'
-        order by Summ desc
+        order by SummPerformance desc
         ");
 
         return $query->result_array();
@@ -571,26 +575,39 @@ class Admin_model extends CI_Model{
 
 
 
-    public function getRankingJHS(){
-        $query = $this->db->query("select Fullname,Summ
+    public function getRankingJHSPerformance(){
+        $query = $this->db->query("select Fullname,SummPerformance
         from teachers,summary
         where Teacher = TeacherID
         and Juniorhigh = 'Yes'
         and summary.dpt = 'jhs'
-        order by Summ desc
+        order by SummPerformance desc
         ");
 
         return $query->result_array();
     }
 
 
-    public function getRankingGS(){
-        $query = $this->db->query("select Fullname,Summ
+    public function getRankingGSPerformance(){
+        $query = $this->db->query("select Fullname,SummPerformance
         from teachers,summary
         where Teacher = TeacherID
         and Gradeschool = 'Yes'
         and summary.dpt = 'gs'
-        order by Summ desc
+        order by SummPerformance desc
+        ");
+
+        return $query->result_array();
+    }
+
+    //dashboard data CREDENTIALS
+    public function getRankingSHSCredentials(){
+        $query = $this->db->query("select Fullname,SummCredentials
+        from teachers,summary
+        where Teacher = TeacherID
+        and Seniorhigh = 'Yes'
+        and summary.dpt = 'shs'
+        order by SummCredentials desc
         ");
 
         return $query->result_array();
@@ -598,7 +615,53 @@ class Admin_model extends CI_Model{
 
 
 
+    public function getRankingJHSCredentials(){
+        $query = $this->db->query("select Fullname,SummCredentials
+        from teachers,summary
+        where Teacher = TeacherID
+        and Juniorhigh = 'Yes'
+        and summary.dpt = 'jhs'
+        order by SummCredentials desc
+        ");
 
+        return $query->result_array();
+    }
+
+
+    public function getRankingGSCredentials(){
+        $query = $this->db->query("select Fullname,SummCredentials
+        from teachers,summary
+        where Teacher = TeacherID
+        and Gradeschool = 'Yes'
+        and summary.dpt = 'gs'
+        order by SummCredentials desc
+        ");
+
+        return $query->result_array();
+    }
+
+
+
+    public function getCredentials($teacherID){
+
+        $query = $this->db->query("select * 
+        from teacher_credentials
+        where TeacherID = $teacherID");
+
+        return $query->result_array();
+
+    }
+
+
+    public function saveCredentialScore($credentialID){
+
+        $data = array(
+            'Points' => $this->input->post("score")
+        );
+        $this->db->where("CredentialID", $credentialID);
+        $this->db->update("teacher_credentials", $data);
+
+    }
 
 
 

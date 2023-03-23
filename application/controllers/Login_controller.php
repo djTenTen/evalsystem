@@ -19,11 +19,17 @@ class Login_controller extends CI_Controller{
         $u = $this->input->post('un');
         $p = $this->input->post('pss');
 
-        $result1 = $this->Login_model->authenticateAdmin($u,$p);
-        $result2 = $this->Login_model->authenticateStudent($u,$p);
-        $result3 = $this->Login_model->authenticateTeacher($u,$p);
+        $res1 = $this->Login_model->authenticateAdmin($u,$p);
+        $result1 = $res1->row_array();
+        $cres1 = $res1->num_rows();
+        $res2 = $this->Login_model->authenticateStudent($u,$p);
+        $result2 = $res2->row_array();
+        $cres2 = $res2->num_rows();
+        $res3 = $this->Login_model->authenticateTeacher($u,$p);
+        $result3 = $res3->row_array();
+        $cres3 = $res3->num_rows();
 
-        if (count($result1) > 0){
+        if ($cres1 > 0){
 
             $data['UserID'] = $result1['UserID'];
             $data['Fullname'] = $result1['Lname'] .', '.$result1['Fname'].' '.$result1['Mname'];
@@ -47,7 +53,7 @@ class Login_controller extends CI_Controller{
             $this->session->set_userdata($sess_data);
             redirect('dashboard');    
 
-        }elseif(count($result2) > 0){
+        }elseif( $cres2> 0){
 
 
             $data['studentID'] = $result2['studentID'];
@@ -68,7 +74,7 @@ class Login_controller extends CI_Controller{
             $this->session->set_userdata($sess_data);
             redirect('studentdash');    
 
-        }elseif(count($result3) > 0){
+        }elseif($cres3 > 0){
 
             $data['TeacherID'] = $result3['TeacherID'];
             $data['FullName'] = $result3['Fullname'];

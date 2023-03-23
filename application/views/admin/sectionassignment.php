@@ -8,12 +8,16 @@
             echo '<div class="alert alert-danger">
             <strong>Error! </strong> Duplication Detected. 
         </div>';
+
+            unset($_SESSION['Duplicate']);
         }
         
         if($this->session->flashdata('Added') != null){
             echo '<div class="alert alert-success">
             <strong>Success! </strong> Teacher Assign to the Sections 
         </div>';
+
+            unset($_SESSION['Added']);
         }
         
     ?>
@@ -73,7 +77,7 @@
 
                         <div class="col-lg-6">
                             <label for="section">Teacher:</label>
-                            <select name="teacher" class="form-control form-control-sm" required>
+                            <select id="select-state" name="teacher" class="form-control form-control-sm" required>
                                 <option value="">Teacher</option>
                                 <?php foreach($teacher as $row){?>
                                     <option value="<?= $row['TeacherID'];?>"><?= $row['Fullname'];?></option>
@@ -150,6 +154,16 @@
 
 
 </div>
+
+
+
+<script>
+    $(document).ready(function (){
+        $('select').selectize({
+            sortField: 'text'
+        });
+    });
+</script>
 
 
 

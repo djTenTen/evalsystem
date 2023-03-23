@@ -39,6 +39,7 @@
             echo '<div class="alert alert-success">
             <strong>Success! </strong> Success evaluation. 
         </div>';
+        unset($_SESSION['Success']);
         }
         
     ?>
@@ -109,10 +110,20 @@
 
 
     <?php }?>
+
+
+        <a href="mycredentials">
+            <div class="mt-4 p-5 bg-primary text-white rounded">
+                <h1>Update my Credentials</h1>
+                <p>upload your documents like seminars, certificates, diploma, and more.
+            </div>
+        </a>
+
 </div>
 
 
 
+       
 
 
 
