@@ -73,6 +73,34 @@
                             <input type="radio" class="form-check-input" id="ressa<?= $row['resultID'];?>" name="ressa<?= $row['resultID'];?>" value="1">
                             <input type="radio" class="form-check-input" id="ressa<?= $row['resultID'];?>" name="ressa<?= $row['resultID'];?>" value="0" hidden/>
                         </td>
+
+                        <script>
+
+                            document.getElementById("ressd<?= $row['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $row['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $row['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $row['resultID'];?>").checked = false;
+                            }
+
+                            document.getElementById("resd<?= $row['resultID'];?>").onclick = function(){
+                                document.getElementById("ressd<?= $row['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $row['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $row['resultID'];?>").checked = false;
+                            }
+
+                            document.getElementById("resa<?= $row['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $row['resultID'];?>").checked = false;
+                                document.getElementById("ressd<?= $row['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $row['resultID'];?>").checked = false;
+                            }
+
+                            document.getElementById("ressa<?= $row['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $row['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $row['resultID'];?>").checked = false;
+                                document.getElementById("ressd<?= $row['resultID'];?>").checked = false;
+                            }
+                         
+                        </script>
                         
                     </tr>
                 </div>
