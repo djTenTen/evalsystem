@@ -3,7 +3,7 @@
 
     <h1>Results</h1>
 
-        <div class="col-6 bg-secondary">
+        <div class="col-6 bg-secondary bg-gradient bg-opacity-75">
             <h2>Senior High</h2>
             <table class="table table-sm table-hover">
                 <thead>
@@ -258,7 +258,7 @@
             </table>
         </div>
 
-        <div class="col-6 bg-primary">
+        <div class="col-6 bg-primary bg-gradient bg-opacity-75">
             <h2>Junior High</h2>
             <table class="table table-sm table-hover">
                 <thead>
@@ -512,7 +512,7 @@
 
         </div>
 
-        <div class="col-6 bg-success">
+        <div class="col-6 bg-success bg-gradient bg-opacity-75">
             <h2>Grade School</h2>
             <table class="table table-sm table-hover">
                 <thead>

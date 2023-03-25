@@ -664,6 +664,61 @@ class Admin_model extends CI_Model{
     }
 
 
+    public function getUsers(){
+
+        $query = $this->db->get("users");
+        return $query->result_array();
+
+    }
+
+    public function registerAdmin(){
+
+        $data = array(
+            'Fname' => strtoupper($this->input->post("fname")),
+            'Mname' => strtoupper($this->input->post("mname")),
+            'Lname' => strtoupper($this->input->post("lname")),
+            'Position' => 'Admin',
+            'un' => $this->input->post("un"),
+            'pss' => $this->input->post("pss")
+        );
+
+        $this->db->insert("users", $data);
+
+    }
+
+
+    public function updateAdmin($adminID){
+
+        $data = array(
+            'Fname' => strtoupper($this->input->post("fname")),
+            'Mname' => strtoupper($this->input->post("mname")),
+            'Lname' => strtoupper($this->input->post("lname")),
+            'Position' => 'Admin',
+            'un' => $this->input->post("un"),
+            'pss' => $this->input->post("pss")
+        );
+
+        $this->db->where("UserID",$adminID);
+        $this->db->update("users", $data);
+
+    }
+
+
+
+    public function resetSystem(){
+
+        // removing evaluation transactions
+        $this->db->query("delete from evaluation_transaction");
+
+        // removing evaluation all evaluations
+        $this->db->query("delete from evaluations");
+
+    }
+
+
+
+  
+
 
 
 

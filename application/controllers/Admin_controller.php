@@ -467,6 +467,74 @@ class Admin_controller extends CI_Controller{
 
 
 
+    public function users(){
+
+        if(empty($_SESSION['Authentication'])){
+            redirect(base_url());
+        }elseif($_SESSION['Authentication'] === 1){
+
+            $page = 'users';
+            if(!file_exists(APPPATH.'views/admin/'.$page.'.php')){
+                show_404();
+            }else{
+
+                $data['title'] = "User Management";
+                $data['users'] = $this->Admin_model->getUsers();
+                
+                $this->load->view('templates/header', $data);
+                $this->load->view('admin/'.$page, $data);
+                $this->load->view('templates/footer');
+
+            }
+            
+        }
+
+    }
+
+
+
+    public function registerAdmin(){
+
+        $this->Admin_model->registerAdmin();
+        $this->session->set_flashdata('registed','registed');
+        redirect('users');
+
+    }
+
+
+    public function updateAdmin($adminID){
+
+        $this->Admin_model->updateAdmin($adminID);
+        $this->session->set_flashdata('updated','updated');
+        redirect('users');
+
+    }
+
+
+
+    public function resetSystem(){
+
+        $apss = $this->input->post("addpass");
+
+        if($apss == '1921680254'){
+            $this->Admin_model->resetSystem();
+            $this->session->set_flashdata('reset','reset');
+            redirect(base_url());
+        }else{
+
+            $this->session->set_flashdata('resetfailed','resetfailed');
+            redirect('dashboard');
+
+        }
+
+    }
+
+
+    
+
+    
+
+
 
 
 

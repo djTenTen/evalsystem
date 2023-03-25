@@ -10,6 +10,8 @@ $route['default_controller'] = 'Login_controller/login';
 $route['authenticate'] = 'Login_controller/authenticate';
 
 $route['dashboard'] = 'Admin_controller/dashboard';
+$route['resetsystem'] = 'Admin_controller/resetSystem';
+
 
 $route['teacher'] = 'Admin_controller/teacher';
 $route['saveteacher'] = 'Admin_controller/saveTeacher';
@@ -44,7 +46,9 @@ $route['teachercredentials'] = 'Admin_controller/teacherCredentials';
 $route['viewcredentials/(:any)'] = 'Admin_controller/viewTeacherCredentials/$1';
 $route['savecredentialscore/(:any)/(:any)'] = 'Admin_controller/saveCredentialScore/$1/$2';
 
-
+$route['users'] = 'Admin_controller/users';
+$route['registeradmin'] = 'Admin_controller/registerAdmin';
+$route['updateadmin/(:any)'] = 'Admin_controller/updateAdmin/$1';
 
 // student accesss
 $route['studentdash'] = 'Student_controller/studentDashboard';

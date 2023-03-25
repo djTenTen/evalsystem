@@ -48,15 +48,33 @@
 
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+
+    
     <div class="container-fluid">
         <a class="navbar-brand" href="<?= base_url();?>dashboard"> <img src="<?= base_url();?>img/logo3.png" alt="" srcset="" style="height: 30px;"> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
         </button>
+
+            <?php
+                if($this->session->flashdata('resetfailed') != null){
+                    echo '<div class="alert alert-info">
+                    <strong>Reset failed!</strong> Invalid administrator password!
+                </div>';
+
+                    unset($_SESSION['resetfailed']);
+                }
+            ?>
+       
         <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+
+            
             <ul class="navbar-nav">
 
-
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url();?>dashboard"">Dashboard</a>
+                </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Teacher</a>
@@ -81,11 +99,17 @@
                         <li><a class="dropdown-item" href="<?= base_url();?>teachercredentials">Teacher Credentials</a></li>
                     </ul>
                 </li>
-          
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Admin</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="<?= base_url();?>users">Users</a></li>
+                        <li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#reset">Reset System</a></li>
+                    </ul>
+                </li>
+             
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><?= $_SESSION['FullName']?></a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?= base_url();?>users">Users</a></li>
                         <li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#logout" >Logout</a></li>
                     </ul>
                 </li>
@@ -93,6 +117,8 @@
             </ul>
         </div>
     </div>
+
+    
 
 
     <!-- The Modal -->
@@ -117,6 +143,45 @@
                     <button type="submit" class="btn btn-primary">Logout</button>
                 <?= form_close();?>
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <!-- The Modal -->
+    <div class="modal fade" id="reset">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Confirmation</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                This action will remove all the sent questions to students and teachers and resetting all de evaluation scores <br>
+                please type the administrator password to proceed this action.
+                <br>
+                <strong>Note:</strong> make sure you have back-up database before doing this action.
+                <br>
+                <?= form_open("resetsystem");?>
+                <div class="col-5">
+                    Administrator password:
+                    <input type="password" class="form form-control" name="addpass" required>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Confirm</button>
+                <?= form_close();?>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
             </div>
 
             </div>

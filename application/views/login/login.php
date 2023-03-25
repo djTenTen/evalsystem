@@ -46,6 +46,14 @@
 
             unset($_SESSION['Login_Failed']);
         }
+
+        if($this->session->flashdata('reset') != null){
+            echo '<div class="alert alert-success">
+            <strong>System Reset!</strong> System successfully resetted.
+        </div>';
+
+            unset($_SESSION['reset']);
+        }
     ?>
 		<div class="row justify-content-center  mt-5">
                 <div class="col-5" style="background-color: rgba(255, 255, 255, 0.7);">
