@@ -164,6 +164,16 @@ class Teacher_controller extends CI_Controller{
 
 
     
+    public function deleteCredential($credentialID){
+
+        $this->Teacher_model->deleteCredential($credentialID);
+        $this->session->set_flashdata('Deleted','Deleted');
+        redirect('mycredentials');
+
+    }
+
+
+
 
 
 

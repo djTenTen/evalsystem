@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2023 at 03:27 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Mar 25, 2023 at 02:30 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `assign_section` (
   `teacherID` varchar(20) DEFAULT NULL,
   `SectionID` varchar(20) DEFAULT NULL,
   `SY` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `assign_section`
@@ -68,7 +68,7 @@ CREATE TABLE `courses` (
   `CourseCode` varchar(30) DEFAULT NULL,
   `CourseDesc` varchar(100) DEFAULT NULL,
   `CollegeDPT` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `courses`
@@ -117,7 +117,7 @@ CREATE TABLE `evaluations` (
   `disagree` varchar(20) NOT NULL DEFAULT '0',
   `agree` varchar(20) NOT NULL DEFAULT '0',
   `sagree` varchar(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `evaluations`
@@ -144,11 +144,11 @@ INSERT INTO `evaluations` (`resultID`, `QuestionID`, `Teacher`, `Section`, `Depa
 (18, '13', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
 (19, '14', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
 (20, '15', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(21, '11', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '0'),
-(22, '12', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '0'),
-(23, '13', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '0'),
-(24, '14', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '0'),
-(25, '15', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '0'),
+(21, '11', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(22, '12', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(23, '13', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(24, '14', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(25, '15', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
 (26, '11', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
 (27, '12', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
 (28, '13', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
@@ -192,16 +192,7 @@ CREATE TABLE `evaluation_transaction` (
   `section` varchar(20) DEFAULT NULL,
   `teacher` varchar(20) DEFAULT NULL,
   `pos` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `evaluation_transaction`
---
-
-INSERT INTO `evaluation_transaction` (`evalID`, `evaluator`, `section`, `teacher`, `pos`) VALUES
-(1, '1', NULL, '1', 'Teacher'),
-(2, '2', NULL, '2', 'Teacher'),
-(3, '9', NULL, '9', 'Teacher');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -213,7 +204,7 @@ CREATE TABLE `questions` (
   `QuestionID` int(11) NOT NULL,
   `QuestionName` varchar(100) DEFAULT NULL,
   `Question` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `questions`
@@ -246,7 +237,7 @@ CREATE TABLE `section` (
   `Section` varchar(30) DEFAULT NULL,
   `strand` varchar(20) NOT NULL DEFAULT 'none',
   `Department` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `section`
@@ -375,7 +366,7 @@ CREATE TABLE `setquestions` (
   `Question` varchar(20) DEFAULT NULL,
   `dpt` varchar(20) DEFAULT NULL,
   `sy` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `setquestions`
@@ -419,7 +410,7 @@ CREATE TABLE `students` (
   `email` varchar(50) DEFAULT NULL,
   `pass` varchar(50) DEFAULT NULL,
   `dpt` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `students`
@@ -452,22 +443,23 @@ INSERT INTO `students` (`studentID`, `FullName`, `Address`, `Level`, `Course`, `
 CREATE TABLE `summary` (
   `SummaryID` int(11) NOT NULL,
   `Teacher` varchar(20) DEFAULT NULL,
-  `Summ` varchar(20) DEFAULT NULL,
+  `SummPerformance` varchar(20) DEFAULT '0',
+  `SummCredentials` varchar(20) DEFAULT '0',
   `dpt` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `summary`
 --
 
-INSERT INTO `summary` (`SummaryID`, `Teacher`, `Summ`, `dpt`) VALUES
-(77, '1', '5', 'shs'),
-(78, '2', '0', 'jhs'),
-(79, '9', '0', 'jhs'),
-(80, '10', '0', 'jhs'),
-(81, '3', '0', 'gs'),
-(82, '9', '0', 'gs'),
-(83, '10', '0', 'gs');
+INSERT INTO `summary` (`SummaryID`, `Teacher`, `SummPerformance`, `SummCredentials`, `dpt`) VALUES
+(412, '1', '5', '70', 'shs'),
+(413, '2', '5', '60', 'jhs'),
+(414, '9', '5', '30', 'jhs'),
+(415, '10', '5', '60.1', 'jhs'),
+(416, '3', '0', NULL, 'gs'),
+(417, '9', '0', '30', 'gs'),
+(418, '10', '0', '60.1', 'gs');
 
 -- --------------------------------------------------------
 
@@ -486,7 +478,7 @@ CREATE TABLE `teachers` (
   `Seniorhigh` varchar(20) DEFAULT 'No',
   `Juniorhigh` varchar(20) DEFAULT 'No',
   `Gradeschool` varchar(20) DEFAULT 'No'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `teachers`
@@ -505,6 +497,37 @@ INSERT INTO `teachers` (`TeacherID`, `Fullname`, `email`, `pass`, `Position`, `d
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `teacher_credentials`
+--
+
+CREATE TABLE `teacher_credentials` (
+  `CredentialID` int(11) NOT NULL,
+  `CredentialName` varchar(500) DEFAULT NULL,
+  `TeacherID` varchar(20) DEFAULT NULL,
+  `Points` varchar(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `teacher_credentials`
+--
+
+INSERT INTO `teacher_credentials` (`CredentialID`, `CredentialName`, `TeacherID`, `Points`) VALUES
+(1, 'Seminar', '1', '20'),
+(2, 'Doctorate Degree', '1', '50'),
+(3, 'Doctorate Degree', '2', '20'),
+(4, 'Bachelor Degree', '2', '10'),
+(5, 'Published article in national journal and international -but not publish in scopus index, web of science, clarivate analytic', '2', '10'),
+(6, 'Training/Workshop Provincial', '2', '20'),
+(7, 'Doctorate Degree', '9', '10'),
+(8, 'Involvement in a commissioned internal or external funded research', '9', '10'),
+(9, 'Training/Workshop National', '9', '10'),
+(10, 'Doctorate Degree', '10', '20'),
+(11, 'Training/Workshop Provincial', '10', '20'),
+(12, 'Training/Workshop Regional', '10', '20.1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `temp_question`
 --
 
@@ -512,7 +535,7 @@ CREATE TABLE `temp_question` (
   `tempquestionID` int(11) NOT NULL,
   `Question` varchar(20) DEFAULT NULL,
   `userID` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -524,7 +547,7 @@ CREATE TABLE `temp_section` (
   `SectionID` int(11) NOT NULL,
   `Section` varchar(20) DEFAULT NULL,
   `UserID` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -545,14 +568,15 @@ CREATE TABLE `users` (
   `Seniorhigh` varchar(20) DEFAULT 'No',
   `Juniorhigh` varchar(20) DEFAULT 'No',
   `Gradeschool` varchar(20) DEFAULT 'No'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`UserID`, `Fname`, `Lname`, `Mname`, `Position`, `un`, `pss`, `Lastlogin`, `College`, `Seniorhigh`, `Juniorhigh`, `Gradeschool`) VALUES
-(1, 'Juan', 'Dela Cruz', 'Lopez', 'Admin', 'admin', 'pass', NULL, 'Yes', 'Yes', 'Yes', 'Yes');
+(1, 'JUAN', 'DELA CRUZ', 'LOPEZ', 'Admin', 'admin', 'pass', NULL, 'Yes', 'Yes', 'Yes', 'Yes'),
+(2, 'B', 'A', 'C', 'Admin', 'a', 'a', NULL, 'No', 'No', 'No', 'No');
 
 --
 -- Indexes for dumped tables
@@ -614,6 +638,13 @@ ALTER TABLE `teachers`
   ADD UNIQUE KEY `TeacherID` (`TeacherID`);
 
 --
+-- Indexes for table `teacher_credentials`
+--
+ALTER TABLE `teacher_credentials`
+  ADD PRIMARY KEY (`CredentialID`),
+  ADD UNIQUE KEY `CredentialID` (`CredentialID`);
+
+--
 -- Indexes for table `temp_question`
 --
 ALTER TABLE `temp_question`
@@ -654,7 +685,7 @@ ALTER TABLE `evaluations`
 -- AUTO_INCREMENT for table `evaluation_transaction`
 --
 ALTER TABLE `evaluation_transaction`
-  MODIFY `evalID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `evalID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `questions`
@@ -678,13 +709,19 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `summary`
 --
 ALTER TABLE `summary`
-  MODIFY `SummaryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `SummaryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=419;
 
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
   MODIFY `TeacherID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `teacher_credentials`
+--
+ALTER TABLE `teacher_credentials`
+  MODIFY `CredentialID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `temp_question`
@@ -702,7 +739,7 @@ ALTER TABLE `temp_section`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

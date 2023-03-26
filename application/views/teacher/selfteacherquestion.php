@@ -78,28 +78,28 @@
 
                         <script>
 
-                            document.getElementById("ressd<?= $row['resultID'];?>").onclick = function(){
-                                document.getElementById("resd<?= $row['resultID'];?>").checked = false;
-                                document.getElementById("resa<?= $row['resultID'];?>").checked = false;
-                                document.getElementById("ressa<?= $row['resultID'];?>").checked = false;
+                            document.getElementById("ressd<?= $shs['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $shs['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $shs['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $shs['resultID'];?>").checked = false;
                             }
 
-                            document.getElementById("resd<?= $row['resultID'];?>").onclick = function(){
-                                document.getElementById("ressd<?= $row['resultID'];?>").checked = false;
-                                document.getElementById("resa<?= $row['resultID'];?>").checked = false;
-                                document.getElementById("ressa<?= $row['resultID'];?>").checked = false;
+                            document.getElementById("resd<?= $shs['resultID'];?>").onclick = function(){
+                                document.getElementById("ressd<?= $shs['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $shs['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $shs['resultID'];?>").checked = false;
                             }
 
-                            document.getElementById("resa<?= $row['resultID'];?>").onclick = function(){
-                                document.getElementById("resd<?= $row['resultID'];?>").checked = false;
-                                document.getElementById("ressd<?= $row['resultID'];?>").checked = false;
-                                document.getElementById("ressa<?= $row['resultID'];?>").checked = false;
+                            document.getElementById("resa<?= $shs['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $shs['resultID'];?>").checked = false;
+                                document.getElementById("ressd<?= $shs['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $shs['resultID'];?>").checked = false;
                             }
 
-                            document.getElementById("ressa<?= $row['resultID'];?>").onclick = function(){
-                                document.getElementById("resd<?= $row['resultID'];?>").checked = false;
-                                document.getElementById("resa<?= $row['resultID'];?>").checked = false;
-                                document.getElementById("ressd<?= $row['resultID'];?>").checked = false;
+                            document.getElementById("ressa<?= $shs['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $shs['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $shs['resultID'];?>").checked = false;
+                                document.getElementById("ressd<?= $shs['resultID'];?>").checked = false;
                             }
                          
                         </script>
@@ -152,6 +152,35 @@
                             <input type="radio" class="form-check-input" id="ressa<?= $jhs['resultID'];?>" name="ressa<?= $jhs['resultID'];?>" value="1">
                             <input type="radio" class="form-check-input" id="ressa<?= $jhs['resultID'];?>" name="ressa<?= $jhs['resultID'];?>" value="0" hidden/>
                         </td>
+
+
+                        <script>
+
+                            document.getElementById("ressd<?= $jhs['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $jhs['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $jhs['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $jhs['resultID'];?>").checked = false;
+                            }
+
+                            document.getElementById("resd<?= $jhs['resultID'];?>").onclick = function(){
+                                document.getElementById("ressd<?= $jhs['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $jhs['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $jhs['resultID'];?>").checked = false;
+                            }
+
+                            document.getElementById("resa<?= $jhs['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $jhs['resultID'];?>").checked = false;
+                                document.getElementById("ressd<?= $jhs['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $jhs['resultID'];?>").checked = false;
+                            }
+
+                            document.getElementById("ressa<?= $jhs['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $jhs['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $jhs['resultID'];?>").checked = false;
+                                document.getElementById("ressd<?= $jhs['resultID'];?>").checked = false;
+                            }
+                         
+                        </script>
                         
                     </tr>
                 </div>
@@ -197,6 +226,34 @@
                             <input type="radio" class="form-check-input" id="ressa<?= $gs['resultID'];?>" name="ressa<?= $gs['resultID'];?>" value="1">
                             <input type="radio" class="form-check-input" id="ressa<?= $gs['resultID'];?>" name="ressa<?= $gs['resultID'];?>" value="0" hidden/>
                         </td>
+
+                        <script>
+
+                            document.getElementById("ressd<?= $gs['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $gs['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $gs['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $gs['resultID'];?>").checked = false;
+                            }
+
+                            document.getElementById("resd<?= $gs['resultID'];?>").onclick = function(){
+                                document.getElementById("ressd<?= $gs['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $gs['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $gs['resultID'];?>").checked = false;
+                            }
+
+                            document.getElementById("resa<?= $gs['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $gs['resultID'];?>").checked = false;
+                                document.getElementById("ressd<?= $gs['resultID'];?>").checked = false;
+                                document.getElementById("ressa<?= $gs['resultID'];?>").checked = false;
+                            }
+
+                            document.getElementById("ressa<?= $gs['resultID'];?>").onclick = function(){
+                                document.getElementById("resd<?= $gs['resultID'];?>").checked = false;
+                                document.getElementById("resa<?= $gs['resultID'];?>").checked = false;
+                                document.getElementById("ressd<?= $gs['resultID'];?>").checked = false;
+                            }
+                         
+                        </script>
                         
                     </tr>
                 </div>

@@ -66,6 +66,8 @@ $route['selfteacherquestion/(:any)'] = 'Teacher_controller/selfTeacherQuestion/$
 $route['logmyanswer/(:any)'] = 'Teacher_controller/logMyAnswer/$1';
 $route['mycredentials'] = 'Teacher_controller/myCredentials';
 $route['uploadcredential'] = 'Teacher_controller/uploadCredential';
+$route['deletecredential/(:any)'] = 'Teacher_controller/deleteCredential/$1';
+
 
 //DASHBOARD
 $route['404_override'] = '';

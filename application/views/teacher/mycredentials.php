@@ -49,6 +49,14 @@
 
         }
 
+        if($this->session->flashdata('Deleted') != null){
+            echo '<div class="alert alert-success">
+            <strong>Removed! </strong> Credentials successfully removed. 
+        </div>';
+        unset($_SESSION['Deleted']);
+
+        }
+        
         ?>
 
         <div class="container">
@@ -134,11 +142,11 @@
                         <td><?= $row['Points']?></td>
                         <td>
 
-
+                        <div class="btn-group">
                             <!-- Button to Open the Modal -->
-                            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#viewdocument<?= $row['CredentialID']?>">
-                            View
-                            </button>
+                            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#viewdocument<?= $row['CredentialID']?>">View</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete<?= $row['CredentialID']?>">Delete</button>
+                        </div>
 
                             <!-- The Modal -->
                             <div class="modal fade" id="viewdocument<?= $row['CredentialID']?>">
@@ -167,6 +175,39 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+                            <!-- The Modal -->
+                            <div class="modal fade" id="delete<?= $row['CredentialID']?>">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Confirmation</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        
+                                        Are you sure to Delete this credentials?
+                                            
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <?= form_open("deletecredential/".$row['CredentialID']);?>
+                                            <button type="submit" class="btn btn-primary">Confirm</button>
+                                        <?= form_close();?>
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
 
 
                         </td>

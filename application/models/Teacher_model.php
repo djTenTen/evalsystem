@@ -97,6 +97,16 @@ class Teacher_model extends CI_Model{
 
 
 
+    
+    public function deleteCredential($credentialID){
+
+        $this->db->query("delete from teacher_credentials where CredentialID = $credentialID");
+
+    }
+
+
+
+
 
 
 
