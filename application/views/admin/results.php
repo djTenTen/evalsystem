@@ -169,8 +169,12 @@
                                                 $shscredential = $this->db->query("select sum(Points) as points 
                                                 from teacher_credentials 
                                                 where TeacherID = $shstid");
-                                                $points = $shscredential->row_array();
-                                                $credpointsshs = $points['points'];
+                                                $pointsshs = $shscredential->row_array();
+                                                $credpointsshs = $pointsshs['points'];
+
+                                                if($pointsshs['points'] == null){
+                                                    $credpointsshs = 0;
+                                                }
 
 
                                                 if(empty($studcount1['studcount'])){
@@ -425,6 +429,9 @@
                                                 $pointsjhs = $jhscredential->row_array();
                                                 $credpointsjhs = $pointsjhs['points'];
 
+                                                if($pointsjhs['points'] == null){
+                                                    $credpointsjhs = 0;
+                                                }
 
 
                                                 if(empty($studcount2['studcount'])){
@@ -636,8 +643,11 @@
                                                 from teacher_credentials 
                                                 where TeacherID = $gstid");
                                                 $pointsgs = $gscredential->row_array();
-
                                                 $credpointsgs = $pointsgs['points'];
+
+                                                if($pointsgs['points'] == null){
+                                                    $credpointsgs = 0;
+                                                }
 
                                                 // $rescountsup = $this->db->query("select Count(resultID) as rescount
                                                 // from evaluations

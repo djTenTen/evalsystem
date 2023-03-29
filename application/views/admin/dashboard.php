@@ -207,7 +207,7 @@
                                         <script>
                                             const xArrayshs<?= $rowshs['TeacherID']?> = ['Self Assessment', 'Supervisor Assessment', 'Student rating', 'Credential rating'];
                                             const yArrayshs<?= $rowshs['TeacherID']?> = [parseInt('<?= $resultTeacherSHS;?>'), <?= $resultSupervisorSHS;?>, parseInt('<?= $resultStudentSHS;?>'), parseInt('<?= $credpointsshs;?>')];
-                                            const layoutshs<?= $rowshs['TeacherID']?> = {title:"Result"};
+                                            const layoutshs<?= $rowshs['TeacherID']?> = {title:"<?= $rowshs['Fullname'];?>"};
                                             const datashs<?= $rowshs['TeacherID']?> = [{labels:xArrayshs<?= $rowshs['TeacherID']?>, values:yArrayshs<?= $rowshs['TeacherID']?>, type:"pie"}];
 
                                             Plotly.newPlot("myPlotshs<?= $rowshs['TeacherID']?>", datashs<?= $rowshs['TeacherID']?>, layoutshs<?= $rowshs['TeacherID']?>);
@@ -434,7 +434,7 @@
                                         <script>
                                             const xArrayjhs<?= $rowjhs['TeacherID']?> = ['Self Assessment', 'Supervisor Assessment', 'Student rating', 'Credential rating'];
                                             const yArrayjhs<?= $rowjhs['TeacherID']?> = [parseInt('<?= $resultTeacherJHS;?>'), <?= $resultSupervisorJHS;?>, parseInt('<?= $resultStudentJHS;?>'), parseInt('<?= $credpointsjhs;?>')];
-                                            const layoutjhs<?= $rowjhs['TeacherID']?> = {title:"Result"};
+                                            const layoutjhs<?= $rowjhs['TeacherID']?> = {title:"<?= $rowjhs['Fullname'];?>"};
                                             const datajhs<?= $rowjhs['TeacherID']?> = [{labels:xArrayjhs<?= $rowjhs['TeacherID']?>, values:yArrayjhs<?= $rowjhs['TeacherID']?>, type:"pie"}];
 
                                             Plotly.newPlot("myPlotjhs<?= $rowjhs['TeacherID']?>", datajhs<?= $rowjhs['TeacherID']?>, layoutjhs<?= $rowjhs['TeacherID']?>);
@@ -616,7 +616,7 @@
                                         <script>
                                             const xArraygs<?= $rowgs['TeacherID']?> = ['Self Assessment', 'Supervisor Assessment', 'Performance rating', 'Credential rating'];
                                             const yArraygs<?= $rowgs['TeacherID']?> = [parseInt('<?= $resultteachergs;?>'), <?= $resultsupervisorgs;?>, parseInt('<?= $performancegs;?>'), parseInt('<?= $credpointsgs;?>')];
-                                            const layoutgs<?= $rowgs['TeacherID']?> = {title:"Result"};
+                                            const layoutgs<?= $rowgs['TeacherID']?> = {title:"<?= $rowgs['Fullname'];?>"};
                                             const datags<?= $rowgs['TeacherID']?> = [{labels:xArraygs<?= $rowgs['TeacherID']?>, values:yArraygs<?= $rowgs['TeacherID']?>, type:"pie"}];
 
                                             Plotly.newPlot("myPlotgs<?= $rowgs['TeacherID']?>", datags<?= $rowgs['TeacherID']?>, layoutgs<?= $rowgs['TeacherID']?>);
