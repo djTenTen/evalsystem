@@ -36,11 +36,31 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+
+
+
+
     <script>
         $(document).ready(function () {
             $('#myDatatable').DataTable();
         });
+
+        $(document).ready(function () {
+            $('#myDatatable1').DataTable();
+        });
+
+        $(document).ready(function () {
+            $('#myDatatable2').DataTable();
+        });
+
+        $(document).ready(function () {
+            $('#myDatatable3').DataTable();
+        });
     </script>
+
+    
 
 </head>
 <body>
@@ -95,7 +115,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Evaluation</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?= base_url();?>results">Results</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url();?>results">Results Evaluation</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url();?>resultscredentials">Results Credentials</a></li>
                         <li><a class="dropdown-item" href="<?= base_url();?>teachercredentials">Teacher Credentials</a></li>
                     </ul>
                 </li>

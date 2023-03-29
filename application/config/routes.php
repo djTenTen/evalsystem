@@ -45,6 +45,10 @@ $route['results'] = 'Admin_controller/Results';
 $route['teachercredentials'] = 'Admin_controller/teacherCredentials';
 $route['viewcredentials/(:any)'] = 'Admin_controller/viewTeacherCredentials/$1';
 $route['savecredentialscore/(:any)/(:any)'] = 'Admin_controller/saveCredentialScore/$1/$2';
+$route['resultscredentials'] = 'Admin_controller/resultsCredentials';
+
+
+
 
 $route['users'] = 'Admin_controller/users';
 $route['registeradmin'] = 'Admin_controller/registerAdmin';

@@ -65,9 +65,9 @@
         </div>
 
 
-        <div class="container m-5">
+        <div class="container m-3">
 
-            <h3>Upload Credentials</h3>
+            <h3>Educational Attainment</h3>
 
             <?= form_open_multipart("uploadcredential");?>
                 <div class="row">
@@ -78,32 +78,234 @@
                             <option value="Doctorate Degree">Doctorate Degree</option>
                             <option value="Masters Degree">Masters Degree</option>
                             <option value="Bachelor Degree">Bachelor Degree</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4">
+                        Upload Supporting Documents (PDF):
+                        <input type="file" name="suppdoc" id="">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+            <?= form_close();?>
+        </div>
+
+        <hr>
+
+        <div class="container m-3">
+
+            <h3>Research Presentation / Review</h3>
+
+            <?= form_open_multipart("uploadcredential");?>
+                <div class="row">
+                    <div class="col-5">
+                        Credential Name:
+                        <select name="credential" id="" class="form form-control form-select">
+                            <option value="" selected>Select Credential</option>
                             <option value="Paper presentation in international research conference">Paper presentation in international research conference</option>
                             <option value="Paper presentation in national research conference">Paper presentation in national research conference</option>
                             <option value="Paper presentation in regional research conference">Paper presentation in regional research conference</option>
                             <option value="Paper presentation in local research conference">Paper presentation in local research conference</option>
                             <option value="Journal Editorial Board Membership/Editing work">Journal Editorial Board Membership/Editing work</option>
                             <option value="Involvement in Research Peered Review">Involvement in Research Peered Review </option>
+                        </select>
+                    </div>
+
+                    <div class="col-4">
+                        Upload Supporting Documents (PDF):
+                        <input type="file" name="suppdoc" id="">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+            <?= form_close();?>
+        </div>
+
+
+        <hr>
+
+
+        <div class="container m-3">
+
+            <h3>Publication of Research, Instructional Materials / Creative Works</h3>
+
+            <?= form_open_multipart("uploadcredential");?>
+                <div class="row">
+                    <div class="col-5">
+                        Credential Name:
+                        <select name="credential" id="" class="form form-control form-select">
+                            <option value="" selected>Select Credential</option>
                             <option value="Published book, Journal, textbook, manual, etc.">Published book, Journal, textbook, manual, etc. </option>
                             <option value="Published article in international journal -scopus index, web of science, clarivate analytic">Published article in international journal -scopus index, web of science, clarivate analytic</option>
                             <option value="Published article in national journal and international -but not publish in scopus index, web of science, clarivate analytic">Published article in national journal and international -but not publish in scopus index, web of science, clarivate analytic</option>
                             <option value="Published article in regional journal">Published article in regional journal</option>
                             <option value="Involvement in a commissioned internal or external funded research">Involvement in a commissioned internal or external funded research</option>
                             <option value="locally published article or at The HCC Research Journal">locally published article or at The HCC Research Journal</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4">
+                        Upload Supporting Documents (PDF):
+                        <input type="file" name="suppdoc" id="">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+            <?= form_close();?>
+        </div>
+
+        <hr>
+
+        <div class="container m-3">
+
+            <h3>Participation in training/workshop</h3>
+
+            <?= form_open_multipart("uploadcredential");?>
+                <div class="row">
+                    <div class="col-5">
+                        Credential Name:
+                        <select name="credential" id="" class="form form-control form-select">
+                            <option value="" selected>Select Credential</option>
                             <option value="Training/Workshop National">Training/Workshop National</option>
                             <option value="Training/Workshop Regional">Training/Workshop Regional</option>
                             <option value="Training/Workshop Provincial">Training/Workshop Provincial</option>
                             <option value="Training/Workshop Congressional">Training/Workshop Congressional</option>
                             <option value="Training/Workshop Local">Training/Workshop Local</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4">
+                        Upload Supporting Documents (PDF):
+                        <input type="file" name="suppdoc" id="">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+            <?= form_close();?>
+        </div>
+        
+
+
+        <hr>
+
+
+
+        <div class="container m-3">
+
+            <h3>Speaker / Lecturer in Training, Workshop or Seminar </h3>
+
+            <?= form_open_multipart("uploadcredential");?>
+                <div class="row">
+                    <div class="col-5">
+                        Credential Name:
+                        <select name="credential" id="" class="form form-control form-select">
+                            <option value="" selected>Select Credential</option>
                             <option value="Speaker or Lecturer in Training and Workshop or Seminar National">Speaker or Lecturer in Training and Workshop or Seminar National</option>
                             <option value="Speaker or Lecturer in Training and Workshop or Seminar Regional">Speaker or Lecturer in Training and Workshop or Seminar Regional</option>
                             <option value="Speaker or Lecturer in Training and Workshop or Seminar Provincial">Speaker or Lecturer in Training and Workshop or Seminar Provincial</option>
                             <option value="Speaker or Lecturer in Training and Workshop or Seminar Congressional">Speaker or Lecturer in Training and Workshop or Seminar Congressional</option>
                             <option value="Speaker or Lecturer in Training and Workshop or Seminar Local">Speaker or Lecturer in Training and Workshop or Seminar Local</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4">
+                        Upload Supporting Documents (PDF):
+                        <input type="file" name="suppdoc" id="">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+            <?= form_close();?>
+        </div>
+        
+
+        <hr>
+
+        <div class="container m-3">
+
+            <h3>Awards, Coaching / Competition [Academics or Sports] </h3>
+
+            <?= form_open_multipart("uploadcredential");?>
+                <div class="row">
+                    <div class="col-5">
+                        Credential Name:
+                        <select name="credential" id="" class="form form-control form-select">
+                            <option value="" selected>Select Credential</option>
+                            <option value="Awards Coaching  Competition Academics or Sports Internationaly">Awards, Coaching / Competition [Academics or Sports] Internationaly</option>
+                            <option value="Awards Coaching  Competition Academics or Sports National">Awards, Coaching / Competition [Academics or Sports] National</option>
+                            <option value="Awards Coaching  Competition Academics or Sports Regional">Awards, Coaching / Competition [Academics or Sports] Regional</option>
+                            <option value="Awards Coaching  Competition Academics or Sports Provincial">Awards, Coaching / Competition [Academics or Sports] Provincial</option>
+                            <option value="Awards Coaching  Competition Academics or Sports Congretional">Awards, Coaching / Competition [Academics or Sports] Congretional</option>
+                            <option value="Awards Coaching  Competition Academics or Sports Local">Awards, Coaching / Competition [Academics or Sports] Local</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4">
+                        Upload Supporting Documents (PDF):
+                        <input type="file" name="suppdoc" id="">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+            <?= form_close();?>
+        </div>
+
+        <hr>
+
+        <div class="container m-3">
+
+            <h3>Professional Organizations</h3>
+
+            <?= form_open_multipart("uploadcredential");?>
+                <div class="row">
+                    <div class="col-5">
+                        Credential Name:
+                        <select name="credential" id="" class="form form-control form-select">
+                            <option value="" selected>Select Credential</option>
                             <option value="Holding a position in Professional Organization">Holding a position in Professional Organization</option>
                             <option value="Membership in Professional Organization">Membership in Professional Organization</option>
                             <option value="Academic Consultancy including Paneling orAdvising">Academic Consultancy including Paneling orAdvising</option>
                             <option value="Research professional level consultancy">Research professional level consultancy</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4">
+                        Upload Supporting Documents (PDF):
+                        <input type="file" name="suppdoc" id="">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+            <?= form_close();?>
+        </div>
+
+        <hr>
+
+        <div class="container m-3">
+
+            <h3>Professional Licensure / Certification</h3>
+
+            <?= form_open_multipart("uploadcredential");?>
+                <div class="row">
+                    <div class="col-5">
+                        Credential Name:
+                        <select name="credential" id="" class="form form-control form-select">
+                            <option value="" selected>Select Credential</option>
                             <option value="PRC Licensure Exam">PRC Licensure Exam</option>
                             <option value="Certification Exam from Recognized Professional Organization">Certification Exam from Recognized Professional Organization</option>
                             <option value="Eligibility Exam from the Government (Civil Service)">Eligibility Exam from the Government (Civil Service)</option>
@@ -122,6 +324,11 @@
                 </div>
             <?= form_close();?>
         </div>
+
+
+        <hr>
+
+        
 
         
         <div class="container">

@@ -13,13 +13,9 @@ class Admin_controller extends CI_Controller{
             }else{
                 $data['title'] = "Dashboard";
 
-                $data['teachershsPerformance'] = $this->Admin_model->getRankingSHSPerformance();
-                $data['teacherjhsPerformance'] = $this->Admin_model->getRankingJHSPerformance();
-                $data['teachergsPerformance'] = $this->Admin_model->getRankingGSPerformance();
-                
-                $data['teachershsCredentials'] = $this->Admin_model->getRankingSHSCredentials();
-                $data['teacherjhsCredentials'] = $this->Admin_model->getRankingJHSCredentials();
-                $data['teachergsCredentials'] = $this->Admin_model->getRankingGSCredentials();
+                $data['shs'] = $this->Admin_model->getSHSteacher();
+                $data['jhs'] = $this->Admin_model->getJHSteacher();
+                $data['gs'] = $this->Admin_model->getGSteacher();
 
                 $this->load->view('templates/header', $data);
                 $this->load->view('admin/'.$page, $data);
@@ -403,6 +399,36 @@ class Admin_controller extends CI_Controller{
 
 
 
+    public function resultsCredentials(){
+
+        if(empty($_SESSION['Authentication'])){
+            redirect(base_url());
+        }elseif($_SESSION['Authentication'] === 1){
+
+            $page = 'resultscredentials';
+            if(!file_exists(APPPATH.'views/admin/'.$page.'.php')){
+                show_404();
+            }else{
+                $data['title'] = "Evaluation Results";
+
+                $this->Admin_model->getcredentialresult();
+
+                $data['shs'] = $this->Admin_model->getTeachersRankSHS();
+                $data['jhs'] = $this->Admin_model->getTeachersRankJHS();
+                $data['gs'] = $this->Admin_model->getTeachersRankGS();
+
+                
+                $this->load->view('templates/header', $data);
+                $this->load->view('admin/'.$page, $data);
+                $this->load->view('templates/footer');
+
+            }
+            
+        }
+        
+    }
+
+    
 
 
 

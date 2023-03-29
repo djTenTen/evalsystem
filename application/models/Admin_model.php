@@ -548,8 +548,51 @@ class Admin_model extends CI_Model{
 
 
 
+    // credential result
+
+    public function getcredentialresult(){
+
+        $query =  $this->db->get("teachers");
+
+        foreach($query->result_array() as $row){
+            
+            $tid = $row['TeacherID'];
+
+            $summ = $this->db->query("select sum(Points) as crepoints from teacher_credentials where TeacherID = $tid");
+            $res = $summ->row_array();
+
+            $data = array(
+                'credentialpoints' => $res['crepoints']
+            );
+
+            $this->db->where("TeacherID", $tid);
+            $this->db->update("teachers", $data);
+
+        }
+
+    }
 
 
+    public function getTeachersRankSHS(){
+
+        $query = $this->db->query("select * from teachers where Seniorhigh = 'Yes' order by credentialpoints desc");
+        return $query->result_array();
+
+    }
+
+    public function getTeachersRankJHS(){
+
+        $query = $this->db->query("select * from teachers where Juniorhigh = 'Yes' order by credentialpoints desc");
+        return $query->result_array();
+
+    }
+
+    public function getTeachersRankGS(){
+
+        $query = $this->db->query("select * from teachers where Gradeschool = 'Yes' order by credentialpoints desc");
+        return $query->result_array();
+
+    }
 
 
 

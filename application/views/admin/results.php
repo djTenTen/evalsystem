@@ -230,15 +230,14 @@
                                         
                                        <strong><?= $rowshs['Fullname'];?> Assessment: <?= $resultTeacherSHS;?> </strong> <br>
                                        <strong>Supervisor Assessment: <?= $resultSupervisorSHS;?> </strong> <br>
-                                       <h3>Credential Assessment: <?= $credpointsshs;?> </h3>
-                                       <h3>Performance rating: <?= $performanceshs;?></h3>
-                                       <h3>Overall: <?= $credpointsshs + $performanceshs ?></h3>
-                                    
-                                       <?php 
-                                       $resultSupervisorSHS = 0;
-                                       $resultTeacherSHS = 0;
-                                       $overallshs= 0;
-                                       $credpointsshs =0;
+                                       <strong>Student Assessment: <?= $summ1;?> </strong> <br>
+                                       <h3>Performance: <?= $performanceshs;?></h3>
+                                
+                                        <?php 
+                                            $resultSupervisorSHS = 0;
+                                            $resultTeacherSHS = 0;
+                                            $resultStudentSHS = 0;
+                                            $credpointsshs =0;
                                         ?>        
                                     </div>
 
@@ -483,15 +482,14 @@
                                         
                                        <strong><?= $rowjhs['Fullname'];?> Assessment: <?= $resultTeacherJHS;?> </strong> <br>
                                        <strong>Supervisor Assessment: <?= $resultSupervisorJHS;?> </strong> <br>
-                                       <h3>Credential Assessment: <?= $credpointsjhs;?> </h3>
+                                       <strong>Student Assessment: <?= $resultStudentJHS;?> </strong> <br>
                                        <h3>Performance rating: <?= $performancejhs;?></h3>
-                                       <h3>Overall: <?= $credpointsjhs + $performancejhs ?></h3>
-
+                                       
                                         <?php 
-                                       $resultSupervisorJHS = 0;
-                                       $resultTeacherJHS = 0;
-                                       $overalljhs = 0;
-                                       $credpointsjhs = 0;
+                                            $resultSupervisorJHS = 0;
+                                            $resultTeacherJHS = 0;
+                                            $resultStudentJHS = 0;
+                                            $credpointsjhs = 0;
                                         ?>
                                     </div>
 
@@ -675,6 +673,17 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+
+                                        <strong><?= $rowjhs['Fullname'];?> Assessment: <?= $resultteacher;?> </strong> <br>
+                                        <strong>Supervisor Assessment: <?= $resultsupervisor;?> </strong> <br>
+                                        <h3>Performance rating: <?= $performancegs;?></h3>
+                                       
+                                        <?php 
+                                            $resultsupervisor = 0;
+                                            $resultteacher = 0;
+                                            $performancegs = 0;
+                                            $credpointsgs = 0;
+                                        ?>
 
                                     </div>
 
