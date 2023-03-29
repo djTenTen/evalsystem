@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2023 at 02:30 PM
+-- Generation Time: Mar 29, 2023 at 08:04 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -124,61 +124,63 @@ CREATE TABLE `evaluations` (
 --
 
 INSERT INTO `evaluations` (`resultID`, `QuestionID`, `Teacher`, `Section`, `Department`, `Set`, `sdisagree`, `disagree`, `agree`, `sagree`) VALUES
-(1, '6', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '0'),
-(2, '7', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '0'),
-(3, '8', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '0'),
-(4, '9', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '0'),
-(5, '10', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '0'),
-(6, '1', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '0', '1'),
-(7, '2', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '0', '1'),
-(8, '3', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '0', '1'),
-(9, '4', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '0', '1'),
-(10, '5', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '0', '1'),
-(11, '11', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(12, '12', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(13, '13', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(14, '14', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
+(1, '6', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '0', '0', '1'),
+(2, '7', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '1', '1', '0'),
+(3, '8', '1', '24', 'Seniorhigh', 'SHS STUDENT', '0', '1', '0', '1'),
+(4, '9', '1', '24', 'Seniorhigh', 'SHS STUDENT', '1', '0', '1', '0'),
+(5, '10', '1', '24', 'Seniorhigh', 'SHS STUDENT', '1', '1', '0', '1'),
+(6, '1', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '1', '0', '1'),
+(7, '2', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '1', '0', '1'),
+(8, '3', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '1', '1'),
+(9, '4', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '0', '1', '1'),
+(10, '5', '1', 'none', 'SHSTeacher', 'SHS TEACHER', '0', '1', '0', '1'),
+(11, '11', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '1', '0', '1'),
+(12, '12', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '1', '1'),
+(13, '13', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '1', '1'),
+(14, '14', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '1', '0', '1'),
 (15, '15', '2', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(16, '11', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(17, '12', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(18, '13', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(19, '14', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(20, '15', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(21, '11', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(22, '12', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(23, '13', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(24, '14', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(25, '15', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '0', '1'),
-(26, '11', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(27, '12', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(28, '13', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(29, '14', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(30, '15', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(31, '11', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(32, '12', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(33, '13', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(34, '14', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(35, '15', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(36, '11', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(37, '12', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(38, '13', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(39, '14', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(40, '15', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(41, '11', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(42, '12', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(43, '13', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(44, '14', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(45, '15', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(46, '11', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(47, '12', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(48, '13', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(49, '14', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(50, '15', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(51, '11', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(52, '12', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(53, '13', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(54, '14', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0'),
-(55, '15', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '0');
+(16, '11', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '1', '0', '1'),
+(17, '12', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '1', '0', '0', '1'),
+(18, '13', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '1', '0', '0', '1'),
+(19, '14', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '1', '0', '0', '1'),
+(20, '15', '9', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '1', '0', '1'),
+(21, '11', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '1', '1'),
+(22, '12', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '1', '1', '1'),
+(23, '13', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '1', '0', '1'),
+(24, '14', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '1', '1'),
+(25, '15', '10', 'none', 'JHSTeacher', 'JHS TEACHER', '0', '0', '1', '1'),
+(26, '11', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(27, '12', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '1', '1', '1', '0'),
+(28, '13', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '1'),
+(29, '14', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '1'),
+(30, '15', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '1', '0', '0'),
+(31, '11', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '1', '0', '0'),
+(32, '12', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '1', '0', '0'),
+(33, '13', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '1', '0', '0'),
+(34, '14', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(35, '15', '2', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(36, '11', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '1'),
+(37, '12', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(38, '13', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '1'),
+(39, '14', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '1', '0', '0'),
+(40, '15', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '1'),
+(41, '11', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '1'),
+(42, '12', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '1', '0', '0'),
+(43, '13', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(44, '14', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(45, '15', '9', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(46, '11', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(47, '12', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '1', '0', '0', '0'),
+(48, '13', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(49, '14', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '1', '0', '0'),
+(50, '15', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(51, '11', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(52, '12', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(53, '13', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '1', '0'),
+(54, '14', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '1', '1', '0', '0'),
+(55, '15', '10', 'none', 'JHSSupervisor', 'JHS TEACHER', '0', '0', '0', '1'),
+(56, '10', '1', 'none', 'SHSSupervisor', 'FIOR SUPP', '0', '0', '0', '1'),
+(57, '9', '1', 'none', 'SHSSupervisor', 'FIOR SUPP', '0', '0', '0', '1');
 
 -- --------------------------------------------------------
 
@@ -392,7 +394,9 @@ INSERT INTO `setquestions` (`setquesiontID`, `Setname`, `Question`, `dpt`, `sy`)
 (17, 'JHS TEACHER', '12', 'JHSTeacher', '2022-2023'),
 (18, 'JHS TEACHER', '13', 'JHSTeacher', '2022-2023'),
 (19, 'JHS TEACHER', '14', 'JHSTeacher', '2022-2023'),
-(20, 'JHS TEACHER', '15', 'JHSTeacher', '2022-2023');
+(20, 'JHS TEACHER', '15', 'JHSTeacher', '2022-2023'),
+(21, 'FIOR SUPP', '10', 'Supervisor', '2022-2023'),
+(22, 'FIOR SUPP', '9', 'Supervisor', '2022-2023');
 
 -- --------------------------------------------------------
 
@@ -443,8 +447,8 @@ INSERT INTO `students` (`studentID`, `FullName`, `Address`, `Level`, `Course`, `
 CREATE TABLE `summary` (
   `SummaryID` int(11) NOT NULL,
   `Teacher` varchar(20) DEFAULT NULL,
-  `SummPerformance` varchar(20) DEFAULT '0',
-  `SummCredentials` varchar(20) DEFAULT '0',
+  `SummPerformance` varchar(20) NOT NULL DEFAULT '0',
+  `SummCredentials` varchar(20) NOT NULL DEFAULT '0',
   `dpt` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -453,13 +457,13 @@ CREATE TABLE `summary` (
 --
 
 INSERT INTO `summary` (`SummaryID`, `Teacher`, `SummPerformance`, `SummCredentials`, `dpt`) VALUES
-(412, '1', '5', '70', 'shs'),
-(413, '2', '5', '60', 'jhs'),
-(414, '9', '5', '30', 'jhs'),
-(415, '10', '5', '60.1', 'jhs'),
-(416, '3', '0', NULL, 'gs'),
-(417, '9', '0', '30', 'gs'),
-(418, '10', '0', '60.1', 'gs');
+(2119, '1', '26.8', '70', 'shs'),
+(2120, '2', '25', '50', 'jhs'),
+(2121, '9', '24.2', '30', 'jhs'),
+(2122, '10', '25', '40.1', 'jhs'),
+(2123, '3', '0', '0', 'gs'),
+(2124, '9', '0', '30', 'gs'),
+(2125, '10', '0', '40.1', 'gs');
 
 -- --------------------------------------------------------
 
@@ -477,22 +481,23 @@ CREATE TABLE `teachers` (
   `College` varchar(20) DEFAULT 'No',
   `Seniorhigh` varchar(20) DEFAULT 'No',
   `Juniorhigh` varchar(20) DEFAULT 'No',
-  `Gradeschool` varchar(20) DEFAULT 'No'
+  `Gradeschool` varchar(20) DEFAULT 'No',
+  `credentialpoints` varchar(20) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `teachers`
 --
 
-INSERT INTO `teachers` (`TeacherID`, `Fullname`, `email`, `pass`, `Position`, `dpt`, `College`, `Seniorhigh`, `Juniorhigh`, `Gradeschool`) VALUES
-(1, 'AGUAS, ALLEN JAYCEE TUD', 'jayceeaguas@gmail.com', 'AGUAS', 'Teacher', 'Teacher', 'No', 'Yes', 'No', 'No'),
-(2, 'SALAC, NIKKO GUINTO', 'nikkosalac@gmail.com', 'SALAC', 'Teacher', 'Teacher', 'No', 'No', 'Yes', 'No'),
-(3, 'SIGUA, CRISTIN JOY  TOLENTINO', 'cristinjoy@gmail.com', 'SIGUA', 'Teacher', 'Teacher', 'No', 'No', 'No', 'Yes'),
-(4, 'PEREZ, ANGELICA P', 'angelperez@gmail.com', 'PEREZ', 'Principal', 'Supervisor', 'No', 'Yes', 'No', 'No'),
-(5, 'SANTOS, MARVIN G', 'marvinsanton@gmail.com', 'SANTOS', 'VPAA', 'Supervisor', 'No', 'Yes', 'Yes', 'Yes'),
-(6, 'DOE, JOHN ', 'johndoe@gmail.com', 'DOE', 'Principal', 'Supervisor', 'No', 'No', 'Yes', 'No'),
-(9, 'GOLD, KEVIN ', 'kevingold@gmail.com', 'GOLD', 'Teacher', 'Teacher', 'No', 'No', 'Yes', 'Yes'),
-(10, 'BOCO, DAVIES JOHN ', 'davies@gmail.com', 'BOCO', 'Teacher', 'Teacher', 'No', 'No', 'Yes', 'Yes');
+INSERT INTO `teachers` (`TeacherID`, `Fullname`, `email`, `pass`, `Position`, `dpt`, `College`, `Seniorhigh`, `Juniorhigh`, `Gradeschool`, `credentialpoints`) VALUES
+(1, 'AGUAS, ALLEN JAYCEE TUD', 'jayceeaguas@gmail.com', 'AGUAS', 'Teacher', 'Teacher', 'No', 'Yes', 'No', 'No', '70'),
+(2, 'SALAC, NIKKO GUINTO', 'nikkosalac@gmail.com', 'SALAC', 'Teacher', 'Teacher', 'No', 'No', 'Yes', 'No', '60'),
+(3, 'SIGUA, CRISTIN JOY  TOLENTINO', 'cristinjoy@gmail.com', 'SIGUA', 'Teacher', 'Teacher', 'No', 'No', 'No', 'Yes', NULL),
+(4, 'PEREZ, ANGELICA P', 'angelperez@gmail.com', 'PEREZ', 'Principal', 'Supervisor', 'No', 'Yes', 'No', 'No', '0'),
+(5, 'SANTOS, MARVIN G', 'marvinsanton@gmail.com', 'SANTOS', 'VPAA', 'Supervisor', 'No', 'Yes', 'Yes', 'Yes', NULL),
+(6, 'DOE, JOHN ', 'johndoe@gmail.com', 'DOE', 'Principal', 'Supervisor', 'No', 'No', 'Yes', 'No', NULL),
+(9, 'GOLD, KEVIN ', 'kevingold@gmail.com', 'GOLD', 'Teacher', 'Teacher', 'No', 'No', 'Yes', 'Yes', '30'),
+(10, 'BOCO, DAVIES JOHN ', 'davies@gmail.com', 'BOCO', 'Teacher', 'Teacher', 'No', 'No', 'Yes', 'Yes', '40.1');
 
 -- --------------------------------------------------------
 
@@ -514,16 +519,17 @@ CREATE TABLE `teacher_credentials` (
 INSERT INTO `teacher_credentials` (`CredentialID`, `CredentialName`, `TeacherID`, `Points`) VALUES
 (1, 'Seminar', '1', '20'),
 (2, 'Doctorate Degree', '1', '50'),
-(3, 'Doctorate Degree', '2', '20'),
+(3, 'Doctorate Degree', '2', '10'),
 (4, 'Bachelor Degree', '2', '10'),
 (5, 'Published article in national journal and international -but not publish in scopus index, web of science, clarivate analytic', '2', '10'),
 (6, 'Training/Workshop Provincial', '2', '20'),
 (7, 'Doctorate Degree', '9', '10'),
 (8, 'Involvement in a commissioned internal or external funded research', '9', '10'),
 (9, 'Training/Workshop National', '9', '10'),
-(10, 'Doctorate Degree', '10', '20'),
 (11, 'Training/Workshop Provincial', '10', '20'),
-(12, 'Training/Workshop Regional', '10', '20.1');
+(12, 'Training/Workshop Regional', '10', '20.1'),
+(13, 'Paper presentation in international research conference', '4', '0'),
+(14, 'PRC Licensure Exam', '4', '0');
 
 -- --------------------------------------------------------
 
@@ -679,7 +685,7 @@ ALTER TABLE `assign_section`
 -- AUTO_INCREMENT for table `evaluations`
 --
 ALTER TABLE `evaluations`
-  MODIFY `resultID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `resultID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `evaluation_transaction`
@@ -697,7 +703,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT for table `setquestions`
 --
 ALTER TABLE `setquestions`
-  MODIFY `setquesiontID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `setquesiontID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `students`
@@ -709,7 +715,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `summary`
 --
 ALTER TABLE `summary`
-  MODIFY `SummaryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=419;
+  MODIFY `SummaryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2126;
 
 --
 -- AUTO_INCREMENT for table `teachers`
@@ -721,13 +727,13 @@ ALTER TABLE `teachers`
 -- AUTO_INCREMENT for table `teacher_credentials`
 --
 ALTER TABLE `teacher_credentials`
-  MODIFY `CredentialID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `CredentialID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `temp_question`
 --
 ALTER TABLE `temp_question`
-  MODIFY `tempquestionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `tempquestionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `temp_section`
