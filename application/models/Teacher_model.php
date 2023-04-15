@@ -307,6 +307,7 @@ class Teacher_model extends CI_Model{
 
         $data = array(
             'CredentialName' => $this->input->post("credential"),
+            'Category' => $this->input->post("cate"),
             'TeacherID' => $teacherID
         );
 

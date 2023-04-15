@@ -696,6 +696,36 @@ class Admin_model extends CI_Model{
     }
 
 
+    public function saveWETPEscore($teacherID){
+
+        $dup = $this->db->query("select * 
+        from teacher_credentials 
+        where TeacherID = $teacherID 
+        and CredentialName = 'Work Efficiency and Teaching Performance Effectiveness'");
+        if($dup->row_array() == null){
+
+            $data = array(
+                'Category' => 'B',
+                'CredentialName' => 'Work Efficiency and Teaching Performance Effectiveness',
+                'TeacherID' => $teacherID,
+                'Points' => $this->input->post("wetpescore")
+            );
+            $this->db->insert("teacher_credentials", $data);
+
+        }else{
+
+            $data = array(
+                'Points' => $this->input->post("wetpescore")
+            );
+            $this->db->where("TeacherID",$teacherID);
+            $this->db->where("CredentialName",'Work Efficiency and Teaching Performance Effectiveness');
+            $this->db->update("teacher_credentials", $data);
+
+        }
+    
+    }
+
+
     public function saveCredentialScore($credentialID){
 
         $data = array(

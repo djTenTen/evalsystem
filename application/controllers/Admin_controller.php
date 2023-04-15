@@ -1,6 +1,11 @@
 <?php
 class Admin_controller extends CI_Controller{
 
+    public function __construct(){
+        parent::__construct();
+        $this->load->library('Pdf_report');
+    }
+
     public function dashboard(){
 
         if(empty($_SESSION['Authentication'])){
@@ -455,6 +460,17 @@ class Admin_controller extends CI_Controller{
 
     }
 
+
+
+    public function saveWETPEscore($teacherID){
+
+        $this->Admin_model->saveWETPEscore($teacherID);
+        $this->session->set_flashdata('scored','scored');
+        redirect('teachercredentials');
+
+    }
+
+
     public function viewTeacherCredentials($teacherID){
 
         if(empty($_SESSION['Authentication'])){
@@ -554,34 +570,43 @@ class Admin_controller extends CI_Controller{
         }
 
     }
-
-
-    
-
     
 
 
+    public function exportResults($creditpointsA,$creditpointsB,$creditpointsC,$creditpointsD,$creditpoints,$performance,$resultSupervisor,$resultTeacher,$resultStudent,$teacherid,$dpt,$rank){
+        
+        if(empty($_SESSION['Authentication'])){
+            redirect(base_url());
+        }elseif($_SESSION['Authentication'] === 1){
+
+            $page = 'resultteacher';
+            if(!file_exists(APPPATH.'views/reports/'.$page.'.php')){
+                show_404();
+            }else{
+
+                
 
 
+                $data['creditpointsA'] = $creditpointsA;
+                $data['creditpointsB'] = $creditpointsB;
+                $data['creditpointsC'] = $creditpointsC;
+                $data['creditpointsD'] = $creditpointsD;
+                $data['creditpoints'] = $creditpoints;
+                $data['performance'] = $performance;
+                $data['resultSupervisor'] = $resultSupervisor;
+                $data['resultTeacher'] = $resultTeacher;
+                $data['resultStudent'] = $resultStudent;
+                $data['teacherid'] = $teacherid;
+                $data['dpt'] = $dpt;
+                $data['rankpos'] = $rank;
+                
 
+                $this->load->view('reports/'.$page, $data);
+            }
+            
+        }
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
+    }
 
     
 

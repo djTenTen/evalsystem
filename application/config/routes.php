@@ -46,7 +46,8 @@ $route['teachercredentials'] = 'Admin_controller/teacherCredentials';
 $route['viewcredentials/(:any)'] = 'Admin_controller/viewTeacherCredentials/$1';
 $route['savecredentialscore/(:any)/(:any)'] = 'Admin_controller/saveCredentialScore/$1/$2';
 $route['resultscredentials'] = 'Admin_controller/resultsCredentials';
-
+$route['savewetpescore/(:any)'] = 'Admin_controller/saveWETPEscore/$1';
+$route['exportresults/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)'] = 'Admin_controller/exportResults/$1/$2/$3/$4/$5/$6/$7/$8/$9/$10/$11/$12';
 
 
 
