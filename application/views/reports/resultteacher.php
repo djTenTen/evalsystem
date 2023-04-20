@@ -64,7 +64,7 @@ $pdf->AddPage();
         
 
         $html .= '
-        <h3>Credentials</h3>
+        <h3>Criteria</h3>
         <table>
             <thead>
                 <tr>
@@ -79,7 +79,7 @@ $pdf->AddPage();
                 </tr>
                 <tr>
                     <td style="width: 400px;">Work Efficiency and Teaching Performance Effectiveness</td>
-                    <td>'.$creditpointsB.'</td>
+                    <td>'.$creditpointsBpoints.'</td>
                 </tr>
                 <tr>
                     <td style="width: 400px;">Community and Extension Service</td>
@@ -91,14 +91,12 @@ $pdf->AddPage();
                 </tr>
                 <tr>
                     <td style="width: 400px;"></td>
-                    <td><h3>Credential Score: '.$creditpoints.'</h3></td>
+                    <td><h3>Total: '.$creditpointsA + $creditpointsBpoints + $creditpointsC + $creditpointsD.'</h3></td>
                 </tr>
             </tbody>
         </table>
         ';
 
-
-        $average = ($performance + $creditpoints) / 2;
 
         $html .= '
         <h3>Performance</h3>
@@ -142,7 +140,7 @@ $pdf->AddPage();
             <tbody>
                 <tr>
                     <td style="width: 400px;"></td>
-                    <td><h3>Average: '.$average.'</h3></td>
+                    <td><h3>Remarks: '.$creditpointsBremarks.'</h3></td>
                 </tr>
             </tbody>
         </table>

@@ -235,46 +235,13 @@
                                                 );
                                                 $this->db->insert("summary", $data1);
 
-
-
-                                                if($credpointsshs <= 10){
-                                                    $rank = 'Assistant_Teacher';
-                                                }elseif($credpointsshs > 10 && $credpointsshs <= 15){
-                                                    $rank = 'Teacher_1';
-                                                }elseif($credpointsshs > 15 && $credpointsshs <= 20){
-                                                    $rank = 'Teacher_2';
-                                                }elseif($credpointsshs > 20 && $credpointsshs <= 25){
-                                                    $rank = 'Teacher_3';
-                                                }elseif($credpointsshs > 25 && $credpointsshs <= 35){
-                                                    $rank = 'Assistant_HT 1 / Assistant_MT 1';
-                                                }elseif($credpointsshs > 35 && $credpointsshs <= 40){
-                                                    $rank = 'Assistant_HT 2 / Assistant_MT 2';
-                                                }elseif($credpointsshs > 40 && $credpointsshs <= 45){
-                                                    $rank = 'Assistant_HT 2 / Assistant_MT 2';
-                                                }elseif($credpointsshs > 45 && $credpointsshs <= 50){
-                                                    $rank = 'Associate_HT_1 / Associate_MT_1';
-                                                }elseif($credpointsshs > 50 && $credpointsshs <= 55){
-                                                    $rank = 'Associate_HT_2 / Associate_MT_2';
-                                                }elseif($credpointsshs > 55 && $credpointsshs <= 60){
-                                                    $rank = 'Associate_HT_3 / Associate_MT_3';
-                                                }elseif($credpointsshs > 60 && $credpointsshs <= 65){
-                                                    $rank = 'Associate_HT_4 / Associate_MT_4';
-                                                }elseif($credpointsshs > 65 && $credpointsshs <= 70){
-                                                    $rank = 'Associate_HT_5 / Associate_MT_5';
-                                                }elseif($credpointsshs > 70 && $credpointsshs <= 75){
-                                                    $rank = 'Head_Teacher_1_/_Master_Teacher_1';
-                                                }elseif($credpointsshs > 75 && $credpointsshs <= 80){
-                                                    $rank = 'Head_Teacher_2_/_Master_Teacher_2';
-                                                }elseif($credpointsshs > 80 && $credpointsshs <= 85){
-                                                    $rank = 'Head_Teacher_3_/_Master_Teacher_3';
-                                                }elseif($credpointsshs > 85 && $credpointsshs <= 90){
-                                                    $rank = 'Head_Teacher_4_/_Master_Teacher_4';
-                                                }elseif($credpointsshs > 90 && $credpointsshs <= 95){
-                                                    $rank = 'Head_Teacher_5_/_Master_Teacher_5';
-                                                }
                                                 
-                                        
-                                        ?> 
+                                                $rank = $this->Dashboard_model->getRank($credpointsshs);
+
+                                                $credpointsshsB = $this->Dashboard_model->getPerformanceScore($performanceshs);
+
+                                                
+                                        ?>
 
 
                                         <table class="table table-hover table-sm">
@@ -291,7 +258,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>Work Efficiency and Teaching Performance Effectiveness</td>
-                                                    <td><?= $credpointsshsB;?></td>
+                                                    <td><?= $credpointsshsB['Points'];?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Community and Extension Service</td>
@@ -303,7 +270,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td></td>
-                                                    <td><h3>Total: <?= $credpointsshs;?></h3></td>
+                                                    <td><h3>Total: <?= $credpointsshsA + $credpointsshsB['Points'] + $credpointsshsC + $credpointsshsD;?></h3></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -312,7 +279,7 @@
                                         
                                         
 
-                                        <?= form_open('exportresults/'.$credpointsshsA.'/'.$credpointsshsB.'/'.$credpointsshsC.'/'.$credpointsshsD.'/'.$credpointsshs.'/'.$performanceshs.'/'.$resultSupervisorSHS.'/'.$resultTeacherSHS.'/'.$summ1.'/'.$rowshs['TeacherID'].'/'.'Senior_High'.'/'.$rank);?>
+                                        <?= form_open('exportresults/'.$credpointsshsA.'/'.$credpointsshsB['Points'].'/'.$credpointsshsB['Remarks'].'/'.$credpointsshsC.'/'.$credpointsshsD.'/'.$performanceshs.'/'.$resultSupervisorSHS.'/'.$resultTeacherSHS.'/'.$summ1.'/'.$rowshs['TeacherID'].'/'.'Senior_High'.'/'.$rank);?>
                                             <button type="submit" class="btn btn-success">Export Data</button>   
                                         <?= form_close();?>
 
@@ -586,41 +553,10 @@
                                                 $this->db->insert("summary", $data1);
 
 
-                                                if($credpointsjhs <= 10){
-                                                    $rankjhs = 'Assistant_Teacher';
-                                                }elseif($credpointsjhs > 10 && $credpointsjhs <= 15){
-                                                    $rankjhs = 'Teacher_1';
-                                                }elseif($credpointsjhs > 15 && $credpointsjhs <= 20){
-                                                    $rankjhs = 'Teacher_2';
-                                                }elseif($credpointsjhs > 20 && $credpointsjhs <= 25){
-                                                    $rankjhs = 'Teacher_3';
-                                                }elseif($credpointsjhs > 25 && $credpointsjhs <= 35){
-                                                    $rankjhs = 'Assistant_HT 1 / Assistant_MT 1';
-                                                }elseif($credpointsjhs > 35 && $credpointsjhs <= 40){
-                                                    $rankjhs = 'Assistant_HT 2 / Assistant_MT 2';
-                                                }elseif($credpointsjhs > 40 && $credpointsjhs <= 45){
-                                                    $rankjhs = 'Assistant_HT 2 / Assistant_MT 2';
-                                                }elseif($credpointsjhs > 45 && $credpointsjhs <= 50){
-                                                    $rankjhs = 'Associate_HT_1 / Associate_MT_1';
-                                                }elseif($credpointsjhs > 50 && $credpointsjhs <= 55){
-                                                    $rankjhs = 'Associate_HT_2 / Associate_MT_2';
-                                                }elseif($credpointsjhs > 55 && $credpointsjhs <= 60){
-                                                    $rankjhs = 'Associate_HT_3 / Associate_MT_3';
-                                                }elseif($credpointsjhs > 60 && $credpointsjhs <= 65){
-                                                    $rankjhs = 'Associate_HT_4 / Associate_MT_4';
-                                                }elseif($credpointsjhs > 65 && $credpointsjhs <= 70){
-                                                    $rankjhs = 'Associate_HT_5 / Associate_MT_5';
-                                                }elseif($credpointsjhs > 70 && $credpointsjhs <= 75){
-                                                    $rankjhs = 'Head_Teacher_1_/_Master_Teacher_1';
-                                                }elseif($credpointsjhs > 75 && $credpointsjhs <= 80){
-                                                    $rankjhs = 'Head_Teacher_2_/_Master_Teacher_2';
-                                                }elseif($credpointsjhs > 80 && $credpointsjhs <= 85){
-                                                    $rankjhs = 'Head_Teacher_3_/_Master_Teacher_3';
-                                                }elseif($credpointsjhs > 85 && $credpointsjhs <= 90){
-                                                    $rankjhs = 'Head_Teacher_4_/_Master_Teacher_4';
-                                                }elseif($credpointsjhs > 90 && $credpointsjhs <= 95){
-                                                    $rankjhs = 'Head_Teacher_5_/_Master_Teacher_5';
-                                                }
+                                                $rankjhs = $this->Dashboard_model->getRank($credpointsjhs);
+
+                                                $credpointsjhsB = $this->Dashboard_model->getPerformanceScore($performancejhs);
+
 
                                         ?>  
 
@@ -640,7 +576,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>Work Efficiency and Teaching Performance Effectiveness</td>
-                                                    <td><?= $credpointsjhsB;?></td>
+                                                    <td><?= $credpointsjhsB['Points'];?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Community and Extension Service</td>
@@ -652,12 +588,12 @@
                                                 </tr>
                                                 <tr>
                                                     <td></td>
-                                                    <td><h3>Total: <?= $credpointsjhs;?></h3></td>
+                                                    <td><h3>Total: <?= $credpointsjhsA + $credpointsjhsB['Points'] + $credpointsjhsC + $credpointsjhsD;?></h3></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                         
-                                        <?= form_open('exportresults/'.$credpointsjhsA.'/'.$credpointsjhsB.'/'.$credpointsjhsC.'/'.$credpointsjhsD.'/'.$credpointsjhs.'/'.$performancejhs.'/'.$resultSupervisorJHS.'/'.$resultTeacherJHS.'/'.$summ2.'/'.$rowjhs['TeacherID'].'/'.'Junior_High'.'/'.$rankjhs);?>
+                                        <?= form_open('exportresults/'.$credpointsjhsA.'/'.$credpointsjhsB['Points'].'/'.$credpointsjhsB['Remarks'].'/'.$credpointsjhsC.'/'.$credpointsjhsD.'/'.$performancejhs.'/'.$resultSupervisorJHS.'/'.$resultTeacherJHS.'/'.$summ2.'/'.$rowjhs['TeacherID'].'/'.'Junior_High'.'/'.$rankjhs);?>
                                             <button type="submit" class="btn btn-success">Export Data</button>   
                                         <?= form_close();?>
 
@@ -881,44 +817,9 @@
                                                 );
                                                 $this->db->insert("summary", $data3);
 
+                                                $rankgs = $this->Dashboard_model->getRank($credpointsgs);
 
-
-                                                if($credpointsgs <= 10){
-                                                    $rankgs = 'Assistant_Teacher';
-                                                }elseif($credpointsgs > 10 && $credpointsgs <= 15){
-                                                    $rankgs = 'Teacher_1';
-                                                }elseif($credpointsgs > 15 && $credpointsgs <= 20){
-                                                    $rankgs = 'Teacher_2';
-                                                }elseif($credpointsgs > 20 && $credpointsgs <= 25){
-                                                    $rankgs = 'Teacher_3';
-                                                }elseif($credpointsgs > 25 && $credpointsgs <= 35){
-                                                    $rankgs = 'Assistant_HT 1 / Assistant_MT 1';
-                                                }elseif($credpointsgs > 35 && $credpointsgs <= 40){
-                                                    $rankgs = 'Assistant_HT 2 / Assistant_MT 2';
-                                                }elseif($credpointsgs > 40 && $credpointsgs <= 45){
-                                                    $rankgs = 'Assistant_HT 2 / Assistant_MT 2';
-                                                }elseif($credpointsgs > 45 && $credpointsgs <= 50){
-                                                    $rankgs = 'Associate_HT_1 / Associate_MT_1';
-                                                }elseif($credpointsgs > 50 && $credpointsgs <= 55){
-                                                    $rankgs = 'Associate_HT_2 / Associate_MT_2';
-                                                }elseif($credpointsgs > 55 && $credpointsgs <= 60){
-                                                    $rankgs = 'Associate_HT_3 / Associate_MT_3';
-                                                }elseif($credpointsgs > 60 && $credpointsgs <= 65){
-                                                    $rankgs = 'Associate_HT_4 / Associate_MT_4';
-                                                }elseif($credpointsgs > 65 && $credpointsgs <= 70){
-                                                    $rankgs = 'Associate_HT_5 / Associate_MT_5';
-                                                }elseif($credpointsgs > 70 && $credpointsgs <= 75){
-                                                    $rankgs = 'Head_Teacher_1_/_Master_Teacher_1';
-                                                }elseif($credpointsgs > 75 && $credpointsgs <= 80){
-                                                    $rankgs = 'Head_Teacher_2_/_Master_Teacher_2';
-                                                }elseif($credpointsgs > 80 && $credpointsgs <= 85){
-                                                    $rankgs = 'Head_Teacher_3_/_Master_Teacher_3';
-                                                }elseif($credpointsgs > 85 && $credpointsgs <= 90){
-                                                    $rankgs = 'Head_Teacher_4_/_Master_Teacher_4';
-                                                }elseif($credpointsgs > 90 && $credpointsgs <= 95){
-                                                    $rankgs = 'Head_Teacher_5_/_Master_Teacher_5';
-                                                }
-                                                
+                                                $credpointsgsB = $this->Dashboard_model->getPerformanceScore($performancegs);
                                                 
                                             ?>
 
@@ -936,7 +837,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>Work Efficiency and Teaching Performance Effectiveness</td>
-                                                    <td><?= $credpointsgsB;?></td>
+                                                    <td><?= $credpointsgsB['Points'];?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Community and Extension Service</td>
@@ -948,12 +849,12 @@
                                                 </tr>
                                                 <tr>
                                                     <td></td>
-                                                    <td><h3>Total: <?= $credpointsgs;?></h3></td>
+                                                    <td><h3>Total: <?= $credpointsgsA + $credpointsgsB['Points'] + $credpointsgsC + $credpointsgsD;?></h3></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                         
-                                        <?= form_open('exportresults/'.$credpointsgsA.'/'.$credpointsgsB.'/'.$credpointsgsC.'/'.$credpointsgsD.'/'.$credpointsgs.'/'.$performancegs.'/'.$resultsupervisorgs.'/'.$resultteachergs.'/'.'0'.'/'.$rowgs['TeacherID'].'/'.'Grade_School'.'/'.$rankgs);?>
+                                        <?= form_open('exportresults/'.$credpointsgsA.'/'.$credpointsgsB['Points'].'/'.$credpointsgsB['Remarks'].'/'.$credpointsgsC.'/'.$credpointsgsD.'/'.$performancegs.'/'.$resultsupervisorgs.'/'.$resultteachergs.'/'.'0'.'/'.$rowgs['TeacherID'].'/'.'Grade_School'.'/'.$rankgs);?>
                                             <button type="submit" class="btn btn-success">Export Data</button>   
                                         <?= form_close();?>
 

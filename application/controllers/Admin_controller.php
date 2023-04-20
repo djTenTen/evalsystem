@@ -573,7 +573,7 @@ class Admin_controller extends CI_Controller{
     
 
 
-    public function exportResults($creditpointsA,$creditpointsB,$creditpointsC,$creditpointsD,$creditpoints,$performance,$resultSupervisor,$resultTeacher,$resultStudent,$teacherid,$dpt,$rank){
+    public function exportResults($creditpointsA,$creditpointsBpoints,$creditpointsBremarks,$creditpointsC,$creditpointsD,$creditpoints,$performance,$resultSupervisor,$resultTeacher,$resultStudent,$teacherid,$dpt,$rank){
         
         if(empty($_SESSION['Authentication'])){
             redirect(base_url());
@@ -584,11 +584,9 @@ class Admin_controller extends CI_Controller{
                 show_404();
             }else{
 
-                
-
-
                 $data['creditpointsA'] = $creditpointsA;
-                $data['creditpointsB'] = $creditpointsB;
+                $data['creditpointsBpoints'] = $creditpointsBpoints;
+                $data['creditpointsBremarks'] = $creditpointsBremarks;
                 $data['creditpointsC'] = $creditpointsC;
                 $data['creditpointsD'] = $creditpointsD;
                 $data['creditpoints'] = $creditpoints;
@@ -599,7 +597,6 @@ class Admin_controller extends CI_Controller{
                 $data['teacherid'] = $teacherid;
                 $data['dpt'] = $dpt;
                 $data['rankpos'] = $rank;
-                
 
                 $this->load->view('reports/'.$page, $data);
             }
