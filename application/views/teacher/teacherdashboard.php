@@ -64,7 +64,7 @@
             </div>
 
         <?php }?>
-    <?php }elseif($pos == 'Supervisor' && $_SESSION['Seniorhigh'] == "Yes"){?>
+    <?php }  if($pos == 'Supervisor' && $_SESSION['Seniorhigh'] == "Yes"){?>
        
             <?php if(!empty($teacherSHS)){?>
                 <h3>Senior High</h3>
@@ -79,7 +79,7 @@
                 </div>
             <?php }?>
         
-    <?php }elseif($pos == 'Supervisor' && $_SESSION['Juniorhigh'] == "Yes"){?>
+    <?php }  if($pos == 'Supervisor' && $_SESSION['Juniorhigh'] == "Yes"){?>
         <?php if(!empty($teacherJHS)){?>
             <h3>Junior High</h3>
             <div class="row">
@@ -93,7 +93,7 @@
             </div>
         <?php }?>
         
-    <?php }elseif($pos == 'Supervisor' && $_SESSION['Gradeschool'] == "Yes"){?>
+    <?php }  if($pos == 'Supervisor' && $_SESSION['Gradeschool'] == "Yes"){?>
 
         <?php if(!empty($teacherGS)){?>
             <h3>Grade School</h3>

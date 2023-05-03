@@ -46,7 +46,16 @@
                                             and Department = 'Seniorhigh'
                                             and assign_section.teacherID = $shstid");
 
-                                            
+                                            if(empty($query1->result_array()) || $query1->result_array() == null){
+                                                $resultStudentSHS = 0;
+                                                $resultTeacherSHS = 0;
+                                                $resultSupervisorSHS = 0;
+                                                $credpointsshs = 0;
+                                                $credpointsshsA = 0;
+                                                $credpointsshsB = 0;
+                                                $credpointsshsC = 0;
+                                                $credpointsshsD = 0;
+                                            }
 
                                             foreach($query1->result_array() as $sec1){
 
@@ -363,6 +372,18 @@
                                             where assign_section.SectionID = section.SectionID
                                             and Department = 'Juniorhigh'
                                             and assign_section.teacherID = $jhstid");
+
+
+                                            if(empty($query2->result_array()) || $query2->result_array() == null){
+                                                $resultStudentJHS = 0;
+                                                $resultTeacherJHS = 0;
+                                                $resultSupervisorJHS = 0;
+                                                $credpointsjhs = 0;
+                                                $credpointsjhsA = 0;
+                                                $credpointsjhsB = 0;
+                                                $credpointsjhsC = 0;
+                                                $credpointsjhsD = 0;
+                                            }
 
                                             foreach($query2->result_array() as $sec2){
 

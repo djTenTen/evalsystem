@@ -22,7 +22,7 @@ class Student_model extends CI_Model{
         }
 
         $teach = $this->db->query("select DISTINCT assign_section.teacherID,Fullname,SectionID
-        from assign_section,teachers,evaluation_transaction
+        from assign_section,teachers
         where SectionID = '$sid'
         and assign_section.teacherID = teachers.TeacherID
         and assign_section.teacherID not in (select teacher from evaluation_transaction where evaluator = $userID and section = $sid)

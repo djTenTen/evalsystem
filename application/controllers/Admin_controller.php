@@ -573,7 +573,7 @@ class Admin_controller extends CI_Controller{
     
 
 
-    public function exportResults($creditpointsA,$creditpointsBpoints,$creditpointsBremarks,$creditpointsC,$creditpointsD,$creditpoints,$performance,$resultSupervisor,$resultTeacher,$resultStudent,$teacherid,$dpt,$rank){
+    public function exportResults($creditpointsA,$creditpointsBpoints,$creditpointsBremarks,$creditpointsC,$creditpointsD,$performance,$resultSupervisor,$resultTeacher,$resultStudent,$teacherid,$dpt,$rank){
         
         if(empty($_SESSION['Authentication'])){
             redirect(base_url());

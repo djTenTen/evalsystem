@@ -20,6 +20,7 @@
                 <tr>
                     <th>Credential ID</th>
                     <th>Type</th>
+                    <th>Alignment</th>
                     <th>Points</th>
                     <th>View</th>
                 </tr>
@@ -29,6 +30,7 @@
                 <tr>
                     <td><?= $row['CredentialID'];?></td>
                     <td><?= $row['CredentialName'];?></td>
+                    <td><?= $row['Alignment'];?></td>
                     <td><?= $row['Points'];?></td>
                     <td>
                         <div class="btn-group">
